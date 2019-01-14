@@ -1,0 +1,13 @@
+---------- Date: 2013-01-30 13:09:07 ~ IP : 115.146.234.154 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /home/essekwtz/public_html/vqmod/xml/vqmod_menu_home_icon.xml
+   id        : Menu Home Icon
+   version   : 0.3
+   vqmver    : 2.2.1
+   author    : booger__
+SEARCH NOT FOUND (ABORTING MOD): <div class="links"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a>
+
+----------------------------------------------------------------------
+
+

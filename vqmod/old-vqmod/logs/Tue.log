@@ -1,0 +1,26 @@
+---------- Date: 2013-06-04 18:17:25 ~ IP : 180.76.6.15 ----------
+REQUEST URI : /index.php?route=product/search&amp;filter_tag=medline+industries-med-msc098201&amp;limit=25
+MOD DETAILS:
+   modFile   : /home/essekwtz/public_html/vqmod/xml/fix_search_for_product_tag.xml
+   id        : FIX_Search_for_product_tag
+   version   : 1.5.5.1
+   vqmver    : 2.3.0
+   author    : maier
+SEARCH NOT FOUND (ABORTING MOD): if (isset($this->request->get['search']) || isset($this->request->get['filter_tag'])) {
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-06-04 18:20:58 ~ IP : 180.76.5.51 ----------
+REQUEST URI : /index.php?route=product/search&amp;filter_tag=medline+industries-med-msc5522&amp;limit=50
+MOD DETAILS:
+   modFile   : /home/essekwtz/public_html/vqmod/xml/fix_search_for_product_tag.xml
+   id        : FIX_Search_for_product_tag
+   version   : 1.5.5.1
+   vqmver    : 2.3.0
+   author    : maier
+SEARCH NOT FOUND (ABORTING MOD): if (isset($this->request->get['search']) || isset($this->request->get['filter_tag'])) {
+
+----------------------------------------------------------------------
+
+
