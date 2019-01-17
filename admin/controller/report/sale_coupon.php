@@ -1,18 +1,10 @@
 <?php
 class ControllerReportSaleCoupon extends Controller {
-<<<<<<< HEAD
 	public function index() {
 		$this->load->language('report/sale_coupon');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
-=======
-	public function index() {     
-		$this->load->language('report/sale_coupon');
-
-		$this->document->setTitle($this->language->get('heading_title'));
-		
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		if (isset($this->request->get['filter_date_start'])) {
 			$filter_date_start = $this->request->get['filter_date_start'];
 		} else {
@@ -24,11 +16,7 @@ class ControllerReportSaleCoupon extends Controller {
 		} else {
 			$filter_date_end = '';
 		}
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		if (isset($this->request->get['page'])) {
 			$page = $this->request->get['page'];
 		} else {
@@ -36,7 +24,6 @@ class ControllerReportSaleCoupon extends Controller {
 		}
 
 		$url = '';
-<<<<<<< HEAD
 
 		if (isset($this->request->get['filter_date_start'])) {
 			$url .= '&filter_date_start=' . $this->request->get['filter_date_start'];
@@ -79,64 +66,10 @@ class ControllerReportSaleCoupon extends Controller {
 
 		foreach ($results as $result) {
 			$data['coupons'][] = array(
-=======
-		
-		if (isset($this->request->get['filter_date_start'])) {
-			$url .= '&filter_date_start=' . $this->request->get['filter_date_start'];
-		}
-		
-		if (isset($this->request->get['filter_date_end'])) {
-			$url .= '&filter_date_end=' . $this->request->get['filter_date_end'];
-		}
-				
-		if (isset($this->request->get['page'])) {
-			$url .= '&page=' . $this->request->get['page'];
-		}
-						
-		$this->data['breadcrumbs'] = array();
-
-   		$this->data['breadcrumbs'][] = array(
-       		'text'      => $this->language->get('text_home'),
-			'href'      => $this->url->link('common/home', 'token=' . $this->session->data['token'], 'SSL'),
-      		'separator' => false
-   		);
-
-   		$this->data['breadcrumbs'][] = array(
-       		'text'      => $this->language->get('heading_title'),
-			'href'      => $this->url->link('report/sale_coupon', 'token=' . $this->session->data['token'] . $url, 'SSL'),
-      		'separator' => ' :: '
-   		);		
-		
-		$this->load->model('report/coupon');
-		
-		$this->data['coupons'] = array();
-		
-		$data = array(
-			'filter_date_start'	=> $filter_date_start, 
-			'filter_date_end'	=> $filter_date_end, 
-			'start'             => ($page - 1) * $this->config->get('config_admin_limit'),
-			'limit'             => $this->config->get('config_admin_limit')
-		);
-				
-		$coupon_total = $this->model_report_coupon->getTotalCoupons($data); 
-		
-		$results = $this->model_report_coupon->getCoupons($data);
-	
-		foreach ($results as $result) {
-			$action = array();
-		
-			$action[] = array(
-				'text' => $this->language->get('text_edit'),
-				'href' => $this->url->link('sale/coupon/update', 'token=' . $this->session->data['token'] . '&coupon_id=' . $result['coupon_id'] . $url, 'SSL')
-			);
-						
-			$this->data['coupons'][] = array(
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 				'name'   => $result['name'],
 				'code'   => $result['code'],
 				'orders' => $result['orders'],
 				'total'  => $this->currency->format($result['total'], $this->config->get('config_currency')),
-<<<<<<< HEAD
 				'edit'   => $this->url->link('marketing/coupon/edit', 'token=' . $this->session->data['token'] . '&coupon_id=' . $result['coupon_id'] . $url, true)
 			);
 		}
@@ -191,58 +124,3 @@ class ControllerReportSaleCoupon extends Controller {
 		$this->response->setOutput($this->load->view('report/sale_coupon', $data));
 	}
 }
-=======
-				'action' => $action
-			);
-		}
-				 
- 		$this->data['heading_title'] = $this->language->get('heading_title');
-		 
-		$this->data['text_no_results'] = $this->language->get('text_no_results');
-		
-		$this->data['column_name'] = $this->language->get('column_name');
-		$this->data['column_code'] = $this->language->get('column_code');
-		$this->data['column_orders'] = $this->language->get('column_orders');
-		$this->data['column_total'] = $this->language->get('column_total');
-		$this->data['column_action'] = $this->language->get('column_action');
-		
-		$this->data['entry_date_start'] = $this->language->get('entry_date_start');
-		$this->data['entry_date_end'] = $this->language->get('entry_date_end');
-		
-		$this->data['button_filter'] = $this->language->get('button_filter');
-		
-		$this->data['token'] = $this->session->data['token'];
-		
-		$url = '';
-						
-		if (isset($this->request->get['filter_date_start'])) {
-			$url .= '&filter_date_start=' . $this->request->get['filter_date_start'];
-		}
-		
-		if (isset($this->request->get['filter_date_end'])) {
-			$url .= '&filter_date_end=' . $this->request->get['filter_date_end'];
-		}
-				
-		$pagination = new Pagination();
-		$pagination->total = $coupon_total;
-		$pagination->page = $page;
-		$pagination->limit = $this->config->get('config_admin_limit');
-		$pagination->text = $this->language->get('text_pagination');
-		$pagination->url = $this->url->link('report/sale_coupon', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
-			
-		$this->data['pagination'] = $pagination->render();
-		
-		$this->data['filter_date_start'] = $filter_date_start;
-		$this->data['filter_date_end'] = $filter_date_end;	
-				
-		$this->template = 'report/sale_coupon.tpl';
-		$this->children = array(
-			'common/header',
-			'common/footer'
-		);
-				
-		$this->response->setOutput($this->render());
-	}
-}
-?>
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19

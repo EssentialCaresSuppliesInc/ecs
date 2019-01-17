@@ -1,31 +1,17 @@
-<<<<<<< HEAD
 /* Javascript plotting library for jQuery, version 0.8.1.
 
 Copyright (c) 2007-2013 IOLA and Ole Laursen.
 Licensed under the MIT license.
 
 */
-=======
-/*! Javascript plotting library for jQuery, v. 0.7.
- *
- * Released under the MIT license by IOLA, December 2007.
- *
- */
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 
 // first an inline dependency, jquery.colorhelpers.js, we inline it here
 // for convenience
 
 /* Plugin for jQuery for working with colors.
-<<<<<<< HEAD
  *
  * Version 1.1.
  *
-=======
- * 
- * Version 1.1.
- * 
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
  * Inspiration from jQuery color animation plugin by John Resig.
  *
  * Released under the MIT license by Ole Laursen, October 2009.
@@ -42,16 +28,11 @@ Licensed under the MIT license.
  *
  * V. 1.1: Fix error handling so e.g. parsing an empty string does
  * produce a color rather than just crashing.
-<<<<<<< HEAD
  */
-=======
- */ 
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 (function(B){B.color={};B.color.make=function(F,E,C,D){var G={};G.r=F||0;G.g=E||0;G.b=C||0;G.a=D!=null?D:1;G.add=function(J,I){for(var H=0;H<J.length;++H){G[J.charAt(H)]+=I}return G.normalize()};G.scale=function(J,I){for(var H=0;H<J.length;++H){G[J.charAt(H)]*=I}return G.normalize()};G.toString=function(){if(G.a>=1){return"rgb("+[G.r,G.g,G.b].join(",")+")"}else{return"rgba("+[G.r,G.g,G.b,G.a].join(",")+")"}};G.normalize=function(){function H(J,K,I){return K<J?J:(K>I?I:K)}G.r=H(0,parseInt(G.r),255);G.g=H(0,parseInt(G.g),255);G.b=H(0,parseInt(G.b),255);G.a=H(0,G.a,1);return G};G.clone=function(){return B.color.make(G.r,G.b,G.g,G.a)};return G.normalize()};B.color.extract=function(D,C){var E;do{E=D.css(C).toLowerCase();if(E!=""&&E!="transparent"){break}D=D.parent()}while(!B.nodeName(D.get(0),"body"));if(E=="rgba(0, 0, 0, 0)"){E="transparent"}return B.color.parse(E)};B.color.parse=function(F){var E,C=B.color.make;if(E=/rgb\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*\)/.exec(F)){return C(parseInt(E[1],10),parseInt(E[2],10),parseInt(E[3],10))}if(E=/rgba\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]+(?:\.[0-9]+)?)\s*\)/.exec(F)){return C(parseInt(E[1],10),parseInt(E[2],10),parseInt(E[3],10),parseFloat(E[4]))}if(E=/rgb\(\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\.[0-9]+)?)\%\s*\)/.exec(F)){return C(parseFloat(E[1])*2.55,parseFloat(E[2])*2.55,parseFloat(E[3])*2.55)}if(E=/rgba\(\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\.[0-9]+)?)\s*\)/.exec(F)){return C(parseFloat(E[1])*2.55,parseFloat(E[2])*2.55,parseFloat(E[3])*2.55,parseFloat(E[4]))}if(E=/#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/.exec(F)){return C(parseInt(E[1],16),parseInt(E[2],16),parseInt(E[3],16))}if(E=/#([a-fA-F0-9])([a-fA-F0-9])([a-fA-F0-9])/.exec(F)){return C(parseInt(E[1]+E[1],16),parseInt(E[2]+E[2],16),parseInt(E[3]+E[3],16))}var D=B.trim(F).toLowerCase();if(D=="transparent"){return C(255,255,255,0)}else{E=A[D]||[0,0,0];return C(E[0],E[1],E[2])}};var A={aqua:[0,255,255],azure:[240,255,255],beige:[245,245,220],black:[0,0,0],blue:[0,0,255],brown:[165,42,42],cyan:[0,255,255],darkblue:[0,0,139],darkcyan:[0,139,139],darkgrey:[169,169,169],darkgreen:[0,100,0],darkkhaki:[189,183,107],darkmagenta:[139,0,139],darkolivegreen:[85,107,47],darkorange:[255,140,0],darkorchid:[153,50,204],darkred:[139,0,0],darksalmon:[233,150,122],darkviolet:[148,0,211],fuchsia:[255,0,255],gold:[255,215,0],green:[0,128,0],indigo:[75,0,130],khaki:[240,230,140],lightblue:[173,216,230],lightcyan:[224,255,255],lightgreen:[144,238,144],lightgrey:[211,211,211],lightpink:[255,182,193],lightyellow:[255,255,224],lime:[0,255,0],magenta:[255,0,255],maroon:[128,0,0],navy:[0,0,128],olive:[128,128,0],orange:[255,165,0],pink:[255,192,203],purple:[128,0,128],violet:[128,0,128],red:[255,0,0],silver:[192,192,192],white:[255,255,255],yellow:[255,255,0]}})(jQuery);
 
 // the actual Flot code
 (function($) {
-<<<<<<< HEAD
 
 	// Cache the prototype hasOwnProperty for faster access
 
@@ -508,18 +489,12 @@ Licensed under the MIT license.
 	///////////////////////////////////////////////////////////////////////////
 	// The top-level container for the entire plot.
 
-=======
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
     function Plot(placeholder, data_, options_, plugins) {
         // data is on the form:
         //   [ series1, series2 ... ]
         // where series is either just the data as [ [x1, y1], [x2, y2], ... ]
         // or { data: [ [x1, y1], [x2, y2], ... ], label: "some label", ... }
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         var series = [],
             options = {
                 // the color theme used for graphs
@@ -533,21 +508,14 @@ Licensed under the MIT license.
                     position: "ne", // position of default legend container within plot
                     margin: 5, // distance from grid edge to default legend container within plot
                     backgroundColor: null, // null means auto-detect
-<<<<<<< HEAD
                     backgroundOpacity: 0.85, // set to 0 to avoid background
                     sorted: null    // default to no legend sorting
-=======
-                    backgroundOpacity: 0.85 // set to 0 to avoid background
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 },
                 xaxis: {
                     show: null, // null = auto-detect, true = always, false = never
                     position: "bottom", // or "top"
                     mode: null, // null or "time"
-<<<<<<< HEAD
                     font: null, // null (derived from CSS in placeholder) or object like { size: 11, lineHeight: 13, style: "italic", weight: "bold", family: "sans-serif", variant: "small-caps" }
-=======
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     color: null, // base color, labels, ticks
                     tickColor: null, // possibly different color of ticks, e.g. "rgba(0,0,0,0.15)"
                     transform: null, // null or f: number -> number to transform axis
@@ -562,20 +530,9 @@ Licensed under the MIT license.
                     reserveSpace: null, // whether to reserve space even if axis isn't shown
                     tickLength: null, // size in pixels of ticks, or "full" for whole line
                     alignTicksWithAxis: null, // axis number or null for no sync
-<<<<<<< HEAD
                     tickDecimals: null, // no. of decimals, null means auto
                     tickSize: null, // number or [number, "unit"]
                     minTickSize: null // number or [number, "unit"]
-=======
-                    
-                    // mode specific options
-                    tickDecimals: null, // no. of decimals, null means auto
-                    tickSize: null, // number or [number, "unit"]
-                    minTickSize: null, // number or [number, "unit"]
-                    monthNames: null, // list of names of months
-                    timeformat: null, // format string to use
-                    twelveHourClock: false // 12 or 24 time in time mode
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 },
                 yaxis: {
                     autoscaleMargin: 0.02,
@@ -594,20 +551,13 @@ Licensed under the MIT license.
                     },
                     lines: {
                         // we don't put in show: false so we can see
-<<<<<<< HEAD
                         // whether lines were actively disabled
-=======
-                        // whether lines were actively disabled 
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                         lineWidth: 2, // in pixels
                         fill: false,
                         fillColor: null,
                         steps: false
-<<<<<<< HEAD
                         // Omit 'zero', so we can later default its value to
                         // match that of the 'fill' option.
-=======
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     },
                     bars: {
                         show: false,
@@ -615,19 +565,12 @@ Licensed under the MIT license.
                         barWidth: 1, // in units of the x axis
                         fill: true,
                         fillColor: null,
-<<<<<<< HEAD
                         align: "left", // "left", "right", or "center"
                         horizontal: false,
                         zero: true
                     },
                     shadowSize: 3,
                     highlightColor: null
-=======
-                        align: "left", // or "center" 
-                        horizontal: false
-                    },
-                    shadowSize: 3
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 },
                 grid: {
                     show: true,
@@ -636,10 +579,7 @@ Licensed under the MIT license.
                     backgroundColor: null, // null for transparent, else color
                     borderColor: null, // set if different from the grid color
                     tickColor: null, // color for the ticks, e.g. "rgba(0,0,0,0.15)"
-<<<<<<< HEAD
                     margin: 0, // distance from the canvas edge to the grid
-=======
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     labelMargin: 5, // in pixels
                     axisMargin: 8, // in pixels
                     borderWidth: 2, // in pixels
@@ -653,37 +593,24 @@ Licensed under the MIT license.
                     autoHighlight: true, // highlight in case mouse is near
                     mouseActiveRadius: 10 // how far the mouse can be away to activate an item
                 },
-<<<<<<< HEAD
                 interaction: {
                     redrawOverlayInterval: 1000/60 // time between updates, -1 means in same flow
                 },
                 hooks: {}
             },
         surface = null,     // the canvas for the plot itself
-=======
-                hooks: {}
-            },
-        canvas = null,      // the canvas for the plot itself
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         overlay = null,     // canvas for interactive stuff on top of plot
         eventHolder = null, // jQuery object that events should be bound to
         ctx = null, octx = null,
         xaxes = [], yaxes = [],
         plotOffset = { left: 0, right: 0, top: 0, bottom: 0},
-<<<<<<< HEAD
-=======
-        canvasWidth = 0, canvasHeight = 0,
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         plotWidth = 0, plotHeight = 0,
         hooks = {
             processOptions: [],
             processRawData: [],
             processDatapoints: [],
-<<<<<<< HEAD
             processOffset: [],
             drawBackground: [],
-=======
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             drawSeries: [],
             draw: [],
             bindEvents: [],
@@ -697,11 +624,7 @@ Licensed under the MIT license.
         plot.setupGrid = setupGrid;
         plot.draw = draw;
         plot.getPlaceholder = function() { return placeholder; };
-<<<<<<< HEAD
         plot.getCanvas = function() { return surface.element; };
-=======
-        plot.getCanvas = function() { return canvas; };
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         plot.getPlotOffset = function() { return plotOffset; };
         plot.width = function () { return plotWidth; };
         plot.height = function () { return plotHeight; };
@@ -730,36 +653,21 @@ Licensed under the MIT license.
         plot.triggerRedrawOverlay = triggerRedrawOverlay;
         plot.pointOffset = function(point) {
             return {
-<<<<<<< HEAD
                 left: parseInt(xaxes[axisNumber(point, "x") - 1].p2c(+point.x) + plotOffset.left, 10),
                 top: parseInt(yaxes[axisNumber(point, "y") - 1].p2c(+point.y) + plotOffset.top, 10)
-=======
-                left: parseInt(xaxes[axisNumber(point, "x") - 1].p2c(+point.x) + plotOffset.left),
-                top: parseInt(yaxes[axisNumber(point, "y") - 1].p2c(+point.y) + plotOffset.top)
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             };
         };
         plot.shutdown = shutdown;
         plot.resize = function () {
-<<<<<<< HEAD
         	var width = placeholder.width(),
         		height = placeholder.height();
             surface.resize(width, height);
             overlay.resize(width, height);
-=======
-            getCanvasDimensions();
-            resizeCanvas(canvas);
-            resizeCanvas(overlay);
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         };
 
         // public attributes
         plot.hooks = hooks;
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         // initialize
         initPlugins(plot);
         parseOptions(options_);
@@ -777,7 +685,6 @@ Licensed under the MIT license.
         }
 
         function initPlugins() {
-<<<<<<< HEAD
 
             // References to key classes, allowing plugins to modify them
 
@@ -788,16 +695,10 @@ Licensed under the MIT license.
             for (var i = 0; i < plugins.length; ++i) {
                 var p = plugins[i];
                 p.init(plot, classes);
-=======
-            for (var i = 0; i < plugins.length; ++i) {
-                var p = plugins[i];
-                p.init(plot);
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 if (p.options)
                     $.extend(true, options, p.options);
             }
         }
-<<<<<<< HEAD
 
         function parseOptions(opts) {
 
@@ -821,29 +722,11 @@ Licensed under the MIT license.
                 options.xaxis.tickColor = options.grid.tickColor || options.xaxis.color;
             if (options.yaxis.tickColor == null) // grid.tickColor for back-compatibility
                 options.yaxis.tickColor = options.grid.tickColor || options.yaxis.color;
-=======
-        
-        function parseOptions(opts) {
-            var i;
-            
-            $.extend(true, options, opts);
-            
-            if (options.xaxis.color == null)
-                options.xaxis.color = options.grid.color;
-            if (options.yaxis.color == null)
-                options.yaxis.color = options.grid.color;
-            
-            if (options.xaxis.tickColor == null) // backwards-compatibility
-                options.xaxis.tickColor = options.grid.tickColor;
-            if (options.yaxis.tickColor == null) // backwards-compatibility
-                options.yaxis.tickColor = options.grid.tickColor;
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 
             if (options.grid.borderColor == null)
                 options.grid.borderColor = options.grid.color;
             if (options.grid.tickColor == null)
                 options.grid.tickColor = $.color.parse(options.grid.color).scale('a', 0.22).toString();
-<<<<<<< HEAD
 
             // Fill in defaults for axis options, including any unspecified
             // font-spec fields, if a font-spec was provided.
@@ -899,15 +782,6 @@ Licensed under the MIT license.
                     }
                 }
             }
-=======
-            
-            // fill in defaults in axes, copy at least always the
-            // first as the rest of the code assumes it'll be there
-            for (i = 0; i < Math.max(1, options.xaxes.length); ++i)
-                options.xaxes[i] = $.extend(true, {}, options.xaxis, options.xaxes[i]);
-            for (i = 0; i < Math.max(1, options.yaxes.length); ++i)
-                options.yaxes[i] = $.extend(true, {}, options.yaxis, options.yaxes[i]);
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 
             // backwards compatibility, to be removed in future
             if (options.xaxis.noTicks && options.xaxis.ticks == null)
@@ -934,11 +808,8 @@ Licensed under the MIT license.
                 $.extend(true, options.series.bars, options.bars);
             if (options.shadowSize != null)
                 options.series.shadowSize = options.shadowSize;
-<<<<<<< HEAD
             if (options.highlightColor != null)
                 options.series.highlightColor = options.highlightColor;
-=======
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 
             // save options on axes for future reference
             for (i = 0; i < options.xaxes.length; ++i)
@@ -959,11 +830,7 @@ Licensed under the MIT license.
             fillInSeriesOptions();
             processData();
         }
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         function parseData(d) {
             var res = [];
             for (var i = 0; i < d.length; ++i) {
@@ -984,11 +851,7 @@ Licensed under the MIT license.
 
             return res;
         }
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         function axisNumber(obj, coord) {
             var a = obj[coord + "axis"];
             if (typeof a == "object") // if we got a real axis, extract number
@@ -1002,15 +865,9 @@ Licensed under the MIT license.
             // return flat array without annoying null entries
             return $.grep(xaxes.concat(yaxes), function (a) { return a; });
         }
-<<<<<<< HEAD
 
         function canvasToAxisCoords(pos) {
             // return an object with x/y corresponding to all used axes
-=======
-        
-        function canvasToAxisCoords(pos) {
-            // return an object with x/y corresponding to all used axes 
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             var res = {}, i, axis;
             for (i = 0; i < xaxes.length; ++i) {
                 axis = xaxes[i];
@@ -1023,11 +880,7 @@ Licensed under the MIT license.
                 if (axis && axis.used)
                     res["y" + axis.n] = axis.c2p(pos.top);
             }
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             if (res.x1 !== undefined)
                 res.x = res.x1;
             if (res.y1 !== undefined)
@@ -1035,11 +888,7 @@ Licensed under the MIT license.
 
             return res;
         }
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         function axisToCanvasCoords(pos) {
             // get canvas coords from the first pair of x/y found in pos
             var res = {}, i, axis, key;
@@ -1057,11 +906,7 @@ Licensed under the MIT license.
                     }
                 }
             }
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             for (i = 0; i < yaxes.length; ++i) {
                 axis = yaxes[i];
                 if (axis && axis.used) {
@@ -1075,17 +920,10 @@ Licensed under the MIT license.
                     }
                 }
             }
-<<<<<<< HEAD
 
             return res;
         }
 
-=======
-            
-            return res;
-        }
-        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         function getOrCreateAxis(axes, number) {
             if (!axes[number - 1])
                 axes[number - 1] = {
@@ -1093,16 +931,11 @@ Licensed under the MIT license.
                     direction: axes == xaxes ? "x" : "y",
                     options: $.extend(true, {}, axes == xaxes ? options.xaxis : options.yaxis)
                 };
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             return axes[number - 1];
         }
 
         function fillInSeriesOptions() {
-<<<<<<< HEAD
 
             var neededColors = series.length, maxIndex = -1, i;
 
@@ -1161,61 +994,6 @@ Licensed under the MIT license.
             for (i = 0; i < series.length; ++i) {
                 s = series[i];
 
-=======
-            var i;
-            
-            // collect what we already got of colors
-            var neededColors = series.length,
-                usedColors = [],
-                assignedColors = [];
-            for (i = 0; i < series.length; ++i) {
-                var sc = series[i].color;
-                if (sc != null) {
-                    --neededColors;
-                    if (typeof sc == "number")
-                        assignedColors.push(sc);
-                    else
-                        usedColors.push($.color.parse(series[i].color));
-                }
-            }
-            
-            // we might need to generate more colors if higher indices
-            // are assigned
-            for (i = 0; i < assignedColors.length; ++i) {
-                neededColors = Math.max(neededColors, assignedColors[i] + 1);
-            }
-
-            // produce colors as needed
-            var colors = [], variation = 0;
-            i = 0;
-            while (colors.length < neededColors) {
-                var c;
-                if (options.colors.length == i) // check degenerate case
-                    c = $.color.make(100, 100, 100);
-                else
-                    c = $.color.parse(options.colors[i]);
-
-                // vary color if needed
-                var sign = variation % 2 == 1 ? -1 : 1;
-                c.scale('rgb', 1 + sign * Math.ceil(variation / 2) * 0.2)
-
-                // FIXME: if we're getting to close to something else,
-                // we should probably skip this one
-                colors.push(c);
-                
-                ++i;
-                if (i >= options.colors.length) {
-                    i = 0;
-                    ++variation;
-                }
-            }
-
-            // fill in the options
-            var colori = 0, s;
-            for (i = 0; i < series.length; ++i) {
-                s = series[i];
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 // assign colors
                 if (s.color == null) {
                     s.color = colors[colori].toString();
@@ -1236,7 +1014,6 @@ Licensed under the MIT license.
                         s.lines.show = true;
                 }
 
-<<<<<<< HEAD
                 // If nothing was provided for lines.zero, default it to match
                 // lines.fill, since areas by default should extend to zero.
 
@@ -1244,29 +1021,19 @@ Licensed under the MIT license.
                     s.lines.zero = !!s.lines.fill;
                 }
 
-=======
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 // setup axes
                 s.xaxis = getOrCreateAxis(xaxes, axisNumber(s, "x"));
                 s.yaxis = getOrCreateAxis(yaxes, axisNumber(s, "y"));
             }
         }
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         function processData() {
             var topSentry = Number.POSITIVE_INFINITY,
                 bottomSentry = Number.NEGATIVE_INFINITY,
                 fakeInfinity = Number.MAX_VALUE,
                 i, j, k, m, length,
-<<<<<<< HEAD
                 s, points, ps, x, y, axis, val, f, p,
                 data, format;
-=======
-                s, points, ps, x, y, axis, val, f, p;
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 
             function updateAxis(axis, min, max) {
                 if (min < axis.datamin && min != -fakeInfinity)
@@ -1281,7 +1048,6 @@ Licensed under the MIT license.
                 axis.datamax = bottomSentry;
                 axis.used = false;
             });
-<<<<<<< HEAD
 
             for (i = 0; i < series.length; ++i) {
                 s = series[i];
@@ -1290,26 +1056,12 @@ Licensed under the MIT license.
                 executeHooks(hooks.processRawData, [ s, s.data, s.datapoints ]);
             }
 
-=======
-            
-            for (i = 0; i < series.length; ++i) {
-                s = series[i];
-                s.datapoints = { points: [] };
-                
-                executeHooks(hooks.processRawData, [ s, s.data, s.datapoints ]);
-            }
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             // first pass: clean and copy data
             for (i = 0; i < series.length; ++i) {
                 s = series[i];
 
-<<<<<<< HEAD
                 data = s.data;
                 format = s.datapoints.format;
-=======
-                var data = s.data, format = s.datapoints.format;
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 
                 if (!format) {
                     format = [];
@@ -1318,22 +1070,14 @@ Licensed under the MIT license.
                     format.push({ y: true, number: true, required: true });
 
                     if (s.bars.show || (s.lines.show && s.lines.fill)) {
-<<<<<<< HEAD
                         var autoscale = !!((s.bars.show && s.bars.zero) || (s.lines.show && s.lines.zero));
                         format.push({ y: true, number: true, required: false, defaultValue: 0, autoscale: autoscale });
-=======
-                        format.push({ y: true, number: true, required: false, defaultValue: 0 });
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                         if (s.bars.horizontal) {
                             delete format[format.length - 1].y;
                             format[format.length - 1].x = true;
                         }
                     }
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     s.datapoints.format = format;
                 }
 
@@ -1341,7 +1085,6 @@ Licensed under the MIT license.
                     continue; // already filled in
 
                 s.datapoints.pointsize = format.length;
-<<<<<<< HEAD
 
                 ps = s.datapoints.pointsize;
                 points = s.datapoints.points;
@@ -1349,15 +1092,6 @@ Licensed under the MIT license.
                 var insertSteps = s.lines.show && s.lines.steps;
                 s.xaxis.used = s.yaxis.used = true;
 
-=======
-                
-                ps = s.datapoints.pointsize;
-                points = s.datapoints.points;
-
-                insertSteps = s.lines.show && s.lines.steps;
-                s.xaxis.used = s.yaxis.used = true;
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 for (j = k = 0; j < data.length; ++j, k += ps) {
                     p = data[j];
 
@@ -1381,35 +1115,22 @@ Licensed under the MIT license.
                                 if (val == null) {
                                     if (f.required)
                                         nullify = true;
-<<<<<<< HEAD
 
-=======
-                                    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                                     if (f.defaultValue != null)
                                         val = f.defaultValue;
                                 }
                             }
-<<<<<<< HEAD
 
                             points[k + m] = val;
                         }
                     }
 
-=======
-                            
-                            points[k + m] = val;
-                        }
-                    }
-                    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     if (nullify) {
                         for (m = 0; m < ps; ++m) {
                             val = points[k + m];
                             if (val != null) {
                                 f = format[m];
                                 // extract min/max info
-<<<<<<< HEAD
                                 if (f.autoscale) {
                                     if (f.x) {
                                         updateAxis(s.xaxis, val, val);
@@ -1418,12 +1139,6 @@ Licensed under the MIT license.
                                         updateAxis(s.yaxis, val, val);
                                     }
                                 }
-=======
-                                if (f.x)
-                                    updateAxis(s.xaxis, val, val);
-                                if (f.y)
-                                    updateAxis(s.yaxis, val, val);
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                             }
                             points[k + m] = null;
                         }
@@ -1453,18 +1168,13 @@ Licensed under the MIT license.
             // give the hooks a chance to run
             for (i = 0; i < series.length; ++i) {
                 s = series[i];
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 executeHooks(hooks.processDatapoints, [ s, s.datapoints]);
             }
 
             // second pass: find datamax/datamin for auto-scaling
             for (i = 0; i < series.length; ++i) {
                 s = series[i];
-<<<<<<< HEAD
                 points = s.datapoints.points;
                 ps = s.datapoints.pointsize;
                 format = s.datapoints.format;
@@ -1472,14 +1182,6 @@ Licensed under the MIT license.
                 var xmin = topSentry, ymin = topSentry,
                     xmax = bottomSentry, ymax = bottomSentry;
 
-=======
-                points = s.datapoints.points,
-                ps = s.datapoints.pointsize;
-
-                var xmin = topSentry, ymin = topSentry,
-                    xmax = bottomSentry, ymax = bottomSentry;
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 for (j = 0; j < points.length; j += ps) {
                     if (points[j] == null)
                         continue;
@@ -1487,15 +1189,9 @@ Licensed under the MIT license.
                     for (m = 0; m < ps; ++m) {
                         val = points[j + m];
                         f = format[m];
-<<<<<<< HEAD
                         if (!f || f.autoscale === false || val == fakeInfinity || val == -fakeInfinity)
                             continue;
 
-=======
-                        if (!f || val == fakeInfinity || val == -fakeInfinity)
-                            continue;
-                        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                         if (f.x) {
                             if (val < xmin)
                                 xmin = val;
@@ -1510,7 +1206,6 @@ Licensed under the MIT license.
                         }
                     }
                 }
-<<<<<<< HEAD
 
                 if (s.bars.show) {
                     // make sure we got room for the bar on the dancing floor
@@ -1530,12 +1225,6 @@ Licensed under the MIT license.
                             throw new Error("Invalid bar alignment: " + s.bars.align);
                     }
 
-=======
-                
-                if (s.bars.show) {
-                    // make sure we got room for the bar on the dancing floor
-                    var delta = s.bars.align == "left" ? 0 : -s.bars.barWidth/2;
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     if (s.bars.horizontal) {
                         ymin += delta;
                         ymax += delta + s.bars.barWidth;
@@ -1545,11 +1234,7 @@ Licensed under the MIT license.
                         xmax += delta + s.bars.barWidth;
                     }
                 }
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 updateAxis(s.xaxis, xmin, xmax);
                 updateAxis(s.yaxis, ymin, ymax);
             }
@@ -1562,7 +1247,6 @@ Licensed under the MIT license.
             });
         }
 
-<<<<<<< HEAD
         function setupCanvases() {
 
             // Make sure the placeholder is clear of everything except canvases
@@ -1590,105 +1274,6 @@ Licensed under the MIT license.
             if (existing) {
                 existing.shutdown();
                 overlay.clear();
-=======
-        function makeCanvas(skipPositioning, cls) {
-            var c = document.createElement('canvas');
-            c.className = cls;
-            c.width = canvasWidth;
-            c.height = canvasHeight;
-                    
-            if (!skipPositioning)
-                $(c).css({ position: 'absolute', left: 0, top: 0 });
-                
-            $(c).appendTo(placeholder);
-                
-            if (!c.getContext) // excanvas hack
-                c = window.G_vmlCanvasManager.initElement(c);
-
-            // used for resetting in case we get replotted
-            c.getContext("2d").save();
-            
-            return c;
-        }
-
-        function getCanvasDimensions() {
-            canvasWidth = placeholder.width();
-            canvasHeight = placeholder.height();
-            
-            if (canvasWidth <= 0 || canvasHeight <= 0)
-                throw "Invalid dimensions for plot, width = " + canvasWidth + ", height = " + canvasHeight;
-        }
-
-        function resizeCanvas(c) {
-            // resizing should reset the state (excanvas seems to be
-            // buggy though)
-            if (c.width != canvasWidth)
-                c.width = canvasWidth;
-
-            if (c.height != canvasHeight)
-                c.height = canvasHeight;
-
-            // so try to get back to the initial state (even if it's
-            // gone now, this should be safe according to the spec)
-            var cctx = c.getContext("2d");
-            cctx.restore();
-
-            // and save again
-            cctx.save();
-        }
-        
-        function setupCanvases() {
-            var reused,
-                existingCanvas = placeholder.children("canvas.base"),
-                existingOverlay = placeholder.children("canvas.overlay");
-
-            if (existingCanvas.length == 0 || existingOverlay == 0) {
-                // init everything
-                
-                placeholder.html(""); // make sure placeholder is clear
-            
-                placeholder.css({ padding: 0 }); // padding messes up the positioning
-                
-                if (placeholder.css("position") == 'static')
-                    placeholder.css("position", "relative"); // for positioning labels and overlay
-
-                getCanvasDimensions();
-                
-                canvas = makeCanvas(true, "base");
-                overlay = makeCanvas(false, "overlay"); // overlay canvas for interactive features
-
-                reused = false;
-            }
-            else {
-                // reuse existing elements
-
-                canvas = existingCanvas.get(0);
-                overlay = existingOverlay.get(0);
-
-                reused = true;
-            }
-
-            ctx = canvas.getContext("2d");
-            octx = overlay.getContext("2d");
-
-            // we include the canvas in the event holder too, because IE 7
-            // sometimes has trouble with the stacking order
-            eventHolder = $([overlay, canvas]);
-
-            if (reused) {
-                // run shutdown in the old plot object
-                placeholder.data("plot").shutdown();
-
-                // reset reused canvases
-                plot.resize();
-                
-                // make sure overlay pixels are cleared (canvas is cleared when we redraw)
-                octx.clearRect(0, 0, canvasWidth, canvasHeight);
-                
-                // then whack any remaining obvious garbage left
-                eventHolder.unbind();
-                placeholder.children().not([canvas, overlay]).remove();
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             }
 
             // save in case we get replotted
@@ -1699,7 +1284,6 @@ Licensed under the MIT license.
             // bind events
             if (options.grid.hoverable) {
                 eventHolder.mousemove(onMouseMove);
-<<<<<<< HEAD
 
                 // Use bind, rather than .mouseleave, because we officially
                 // still support jQuery 1.2.6, which doesn't define a shortcut
@@ -1708,9 +1292,6 @@ Licensed under the MIT license.
                 // .mouseleave when we drop support for 1.2.6.
 
                 eventHolder.bind("mouseleave", onMouseLeave);
-=======
-                eventHolder.mouseleave(onMouseLeave);
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             }
 
             if (options.grid.clickable)
@@ -1722,40 +1303,23 @@ Licensed under the MIT license.
         function shutdown() {
             if (redrawTimeout)
                 clearTimeout(redrawTimeout);
-<<<<<<< HEAD
 
             eventHolder.unbind("mousemove", onMouseMove);
             eventHolder.unbind("mouseleave", onMouseLeave);
             eventHolder.unbind("click", onClick);
 
-=======
-            
-            eventHolder.unbind("mousemove", onMouseMove);
-            eventHolder.unbind("mouseleave", onMouseLeave);
-            eventHolder.unbind("click", onClick);
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             executeHooks(hooks.shutdown, [eventHolder]);
         }
 
         function setTransformationHelpers(axis) {
             // set helper functions on the axis, assumes plot area
             // has been computed already
-<<<<<<< HEAD
 
             function identity(x) { return x; }
 
             var s, m, t = axis.options.transform || identity,
                 it = axis.options.inverseTransform;
 
-=======
-            
-            function identity(x) { return x; }
-            
-            var s, m, t = axis.options.transform || identity,
-                it = axis.options.inverseTransform;
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             // precompute how much the axis is scaling a point
             // in canvas space
             if (axis.direction == "x") {
@@ -1781,7 +1345,6 @@ Licensed under the MIT license.
         }
 
         function measureTickLabels(axis) {
-<<<<<<< HEAD
 
             var opts = axis.options,
                 ticks = axis.ticks || [],
@@ -1807,105 +1370,29 @@ Licensed under the MIT license.
 
             axis.labelWidth = opts.labelWidth || labelWidth;
             axis.labelHeight = opts.labelHeight || labelHeight;
-=======
-            var opts = axis.options, i, ticks = axis.ticks || [], labels = [],
-                l, w = opts.labelWidth, h = opts.labelHeight, dummyDiv;
-
-            function makeDummyDiv(labels, width) {
-                return $('<div style="position:absolute;top:-10000px;' + width + 'font-size:smaller">' +
-                         '<div class="' + axis.direction + 'Axis ' + axis.direction + axis.n + 'Axis">'
-                         + labels.join("") + '</div></div>')
-                    .appendTo(placeholder);
-            }
-            
-            if (axis.direction == "x") {
-                // to avoid measuring the widths of the labels (it's slow), we
-                // construct fixed-size boxes and put the labels inside
-                // them, we don't need the exact figures and the
-                // fixed-size box content is easy to center
-                if (w == null)
-                    w = Math.floor(canvasWidth / (ticks.length > 0 ? ticks.length : 1));
-
-                // measure x label heights
-                if (h == null) {
-                    labels = [];
-                    for (i = 0; i < ticks.length; ++i) {
-                        l = ticks[i].label;
-                        if (l)
-                            labels.push('<div class="tickLabel" style="float:left;width:' + w + 'px">' + l + '</div>');
-                    }
-
-                    if (labels.length > 0) {
-                        // stick them all in the same div and measure
-                        // collective height
-                        labels.push('<div style="clear:left"></div>');
-                        dummyDiv = makeDummyDiv(labels, "width:10000px;");
-                        h = dummyDiv.height();
-                        dummyDiv.remove();
-                    }
-                }
-            }
-            else if (w == null || h == null) {
-                // calculate y label dimensions
-                for (i = 0; i < ticks.length; ++i) {
-                    l = ticks[i].label;
-                    if (l)
-                        labels.push('<div class="tickLabel">' + l + '</div>');
-                }
-                
-                if (labels.length > 0) {
-                    dummyDiv = makeDummyDiv(labels, "");
-                    if (w == null)
-                        w = dummyDiv.children().width();
-                    if (h == null)
-                        h = dummyDiv.find("div.tickLabel").height();
-                    dummyDiv.remove();
-                }
-            }
-
-            if (w == null)
-                w = 0;
-            if (h == null)
-                h = 0;
-
-            axis.labelWidth = w;
-            axis.labelHeight = h;
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         }
 
         function allocateAxisBoxFirstPhase(axis) {
             // find the bounding box of the axis by looking at label
             // widths/heights and ticks, make room by diminishing the
-<<<<<<< HEAD
             // plotOffset; this first phase only looks at one
             // dimension per axis, the other dimension depends on the
             // other axes so will have to wait
-=======
-            // plotOffset
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 
             var lw = axis.labelWidth,
                 lh = axis.labelHeight,
                 pos = axis.options.position,
                 tickLength = axis.options.tickLength,
-<<<<<<< HEAD
                 axisMargin = options.grid.axisMargin,
                 padding = options.grid.labelMargin,
                 all = axis.direction == "x" ? xaxes : yaxes,
                 index, innermost;
-=======
-                axismargin = options.grid.axisMargin,
-                padding = options.grid.labelMargin,
-                all = axis.direction == "x" ? xaxes : yaxes,
-                index;
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 
             // determine axis margin
             var samePosition = $.grep(all, function (a) {
                 return a && a.options.position == pos && a.reserveSpace;
             });
             if ($.inArray(axis, samePosition) == samePosition.length - 1)
-<<<<<<< HEAD
                 axisMargin = 0; // outermost
 
             // determine tick length - if we're innermost, we can use "full"
@@ -1921,29 +1408,12 @@ Licensed under the MIT license.
                     tickLength = 5;
             }
 
-=======
-                axismargin = 0; // outermost
-
-            // determine tick length - if we're innermost, we can use "full"
-            if (tickLength == null)
-                tickLength = "full";
-
-            var sameDirection = $.grep(all, function (a) {
-                return a && a.reserveSpace;
-            });
-
-            var innermost = $.inArray(axis, sameDirection) == 0;
-            if (!innermost && tickLength == "full")
-                tickLength = 5;
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             if (!isNaN(+tickLength))
                 padding += +tickLength;
 
             // compute box
             if (axis.direction == "x") {
                 lh += padding;
-<<<<<<< HEAD
 
                 if (pos == "bottom") {
                     plotOffset.bottom += lh + axisMargin;
@@ -1952,21 +1422,10 @@ Licensed under the MIT license.
                 else {
                     axis.box = { top: plotOffset.top + axisMargin, height: lh };
                     plotOffset.top += lh + axisMargin;
-=======
-                
-                if (pos == "bottom") {
-                    plotOffset.bottom += lh + axismargin;
-                    axis.box = { top: canvasHeight - plotOffset.bottom, height: lh };
-                }
-                else {
-                    axis.box = { top: plotOffset.top + axismargin, height: lh };
-                    plotOffset.top += lh + axismargin;
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 }
             }
             else {
                 lw += padding;
-<<<<<<< HEAD
 
                 if (pos == "left") {
                     axis.box = { left: plotOffset.left + axisMargin, width: lw };
@@ -1975,16 +1434,6 @@ Licensed under the MIT license.
                 else {
                     plotOffset.right += lw + axisMargin;
                     axis.box = { left: surface.width - plotOffset.right, width: lw };
-=======
-                
-                if (pos == "left") {
-                    axis.box = { left: plotOffset.left + axismargin, width: lw };
-                    plotOffset.left += lw + axismargin;
-                }
-                else {
-                    plotOffset.right += lw + axismargin;
-                    axis.box = { left: canvasWidth - plotOffset.right, width: lw };
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 }
             }
 
@@ -1996,7 +1445,6 @@ Licensed under the MIT license.
         }
 
         function allocateAxisBoxSecondPhase(axis) {
-<<<<<<< HEAD
             // now that all axis boxes have been placed in one
             // dimension, we can set the remaining dimension coordinates
             if (axis.direction == "x") {
@@ -2066,76 +1514,37 @@ Licensed under the MIT license.
             }
 
             // init axes
-=======
-            // set remaining bounding box coordinates
-            if (axis.direction == "x") {
-                axis.box.left = plotOffset.left;
-                axis.box.width = plotWidth;
-            }
-            else {
-                axis.box.top = plotOffset.top;
-                axis.box.height = plotHeight;
-            }
-        }
-        
-        function setupGrid() {
-            var i, axes = allAxes();
-
-            // first calculate the plot and axis box dimensions
-
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             $.each(axes, function (_, axis) {
                 axis.show = axis.options.show;
                 if (axis.show == null)
                     axis.show = axis.used; // by default an axis is visible if it's got data
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 axis.reserveSpace = axis.show || axis.options.reserveSpace;
 
                 setRange(axis);
             });
 
-<<<<<<< HEAD
             if (showGrid) {
 
                 var allocatedAxes = $.grep(axes, function (axis) { return axis.reserveSpace; });
 
-=======
-            allocatedAxes = $.grep(axes, function (axis) { return axis.reserveSpace; });
-
-            plotOffset.left = plotOffset.right = plotOffset.top = plotOffset.bottom = 0;
-            if (options.grid.show) {
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 $.each(allocatedAxes, function (_, axis) {
                     // make the ticks
                     setupTickGeneration(axis);
                     setTicks(axis);
                     snapRangeToTicks(axis, axis.ticks);
-<<<<<<< HEAD
-=======
-
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     // find labelWidth/Height for axis
                     measureTickLabels(axis);
                 });
 
-<<<<<<< HEAD
                 // with all dimensions calculated, we can compute the
                 // axis bounding boxes, start from the outside
                 // (reverse order)
-=======
-                // with all dimensions in house, we can compute the
-                // axis boxes, start from the outside (reverse order)
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 for (i = allocatedAxes.length - 1; i >= 0; --i)
                     allocateAxisBoxFirstPhase(allocatedAxes[i]);
 
                 // make sure we've got enough space for things that
                 // might stick out
-<<<<<<< HEAD
                 adjustLayoutForThingsStickingOut();
 
                 $.each(allocatedAxes, function (_, axis) {
@@ -2147,30 +1556,10 @@ Licensed under the MIT license.
             plotHeight = surface.height - plotOffset.bottom - plotOffset.top;
 
             // now we got the proper plot dimensions, we can compute the scaling
-=======
-                var minMargin = options.grid.minBorderMargin;
-                if (minMargin == null) {
-                    minMargin = 0;
-                    for (i = 0; i < series.length; ++i)
-                        minMargin = Math.max(minMargin, series[i].points.radius + series[i].points.lineWidth/2);
-                }
-                    
-                for (var a in plotOffset) {
-                    plotOffset[a] += options.grid.borderWidth;
-                    plotOffset[a] = Math.max(minMargin, plotOffset[a]);
-                }
-            }
-            
-            plotWidth = canvasWidth - plotOffset.left - plotOffset.right;
-            plotHeight = canvasHeight - plotOffset.bottom - plotOffset.top;
-
-            // now we got the proper plotWidth/Height, we can compute the scaling
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             $.each(axes, function (_, axis) {
                 setTransformationHelpers(axis);
             });
 
-<<<<<<< HEAD
             if (showGrid) {
                 drawAxisLabels();
             }
@@ -2178,19 +1567,6 @@ Licensed under the MIT license.
             insertLegend();
         }
 
-=======
-            if (options.grid.show) {
-                $.each(allocatedAxes, function (_, axis) {
-                    allocateAxisBoxSecondPhase(axis);
-                });
-
-                insertAxisLabels();
-            }
-            
-            insertLegend();
-        }
-        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         function setRange(axis) {
             var opts = axis.options,
                 min = +(opts.min != null ? opts.min : axis.datamin),
@@ -2232,11 +1608,7 @@ Licensed under the MIT license.
 
         function setupTickGeneration(axis) {
             var opts = axis.options;
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             // estimate number of ticks
             var noTicks;
             if (typeof opts.ticks == "number" && opts.ticks > 0)
@@ -2244,7 +1616,6 @@ Licensed under the MIT license.
             else
                 // heuristic based on the model a*sqrt(x) fitted to
                 // some data points that seemed reasonable
-<<<<<<< HEAD
                 noTicks = 0.3 * Math.sqrt(axis.direction == "x" ? surface.width : surface.height);
 
             var delta = (axis.max - axis.min) / noTicks,
@@ -2304,211 +1675,6 @@ Licensed under the MIT license.
                         v = Number.NaN,
                         prev;
 
-=======
-                noTicks = 0.3 * Math.sqrt(axis.direction == "x" ? canvasWidth : canvasHeight);
-
-            var delta = (axis.max - axis.min) / noTicks,
-                size, generator, unit, formatter, i, magn, norm;
-
-            if (opts.mode == "time") {
-                // pretty handling of time
-                
-                // map of app. size of time units in milliseconds
-                var timeUnitSize = {
-                    "second": 1000,
-                    "minute": 60 * 1000,
-                    "hour": 60 * 60 * 1000,
-                    "day": 24 * 60 * 60 * 1000,
-                    "month": 30 * 24 * 60 * 60 * 1000,
-                    "year": 365.2425 * 24 * 60 * 60 * 1000
-                };
-
-
-                // the allowed tick sizes, after 1 year we use
-                // an integer algorithm
-                var spec = [
-                    [1, "second"], [2, "second"], [5, "second"], [10, "second"],
-                    [30, "second"], 
-                    [1, "minute"], [2, "minute"], [5, "minute"], [10, "minute"],
-                    [30, "minute"], 
-                    [1, "hour"], [2, "hour"], [4, "hour"],
-                    [8, "hour"], [12, "hour"],
-                    [1, "day"], [2, "day"], [3, "day"],
-                    [0.25, "month"], [0.5, "month"], [1, "month"],
-                    [2, "month"], [3, "month"], [6, "month"],
-                    [1, "year"]
-                ];
-
-                var minSize = 0;
-                if (opts.minTickSize != null) {
-                    if (typeof opts.tickSize == "number")
-                        minSize = opts.tickSize;
-                    else
-                        minSize = opts.minTickSize[0] * timeUnitSize[opts.minTickSize[1]];
-                }
-
-                for (var i = 0; i < spec.length - 1; ++i)
-                    if (delta < (spec[i][0] * timeUnitSize[spec[i][1]]
-                                 + spec[i + 1][0] * timeUnitSize[spec[i + 1][1]]) / 2
-                       && spec[i][0] * timeUnitSize[spec[i][1]] >= minSize)
-                        break;
-                size = spec[i][0];
-                unit = spec[i][1];
-                
-                // special-case the possibility of several years
-                if (unit == "year") {
-                    magn = Math.pow(10, Math.floor(Math.log(delta / timeUnitSize.year) / Math.LN10));
-                    norm = (delta / timeUnitSize.year) / magn;
-                    if (norm < 1.5)
-                        size = 1;
-                    else if (norm < 3)
-                        size = 2;
-                    else if (norm < 7.5)
-                        size = 5;
-                    else
-                        size = 10;
-
-                    size *= magn;
-                }
-
-                axis.tickSize = opts.tickSize || [size, unit];
-                
-                generator = function(axis) {
-                    var ticks = [],
-                        tickSize = axis.tickSize[0], unit = axis.tickSize[1],
-                        d = new Date(axis.min);
-                    
-                    var step = tickSize * timeUnitSize[unit];
-
-                    if (unit == "second")
-                        d.setUTCSeconds(floorInBase(d.getUTCSeconds(), tickSize));
-                    if (unit == "minute")
-                        d.setUTCMinutes(floorInBase(d.getUTCMinutes(), tickSize));
-                    if (unit == "hour")
-                        d.setUTCHours(floorInBase(d.getUTCHours(), tickSize));
-                    if (unit == "month")
-                        d.setUTCMonth(floorInBase(d.getUTCMonth(), tickSize));
-                    if (unit == "year")
-                        d.setUTCFullYear(floorInBase(d.getUTCFullYear(), tickSize));
-                    
-                    // reset smaller components
-                    d.setUTCMilliseconds(0);
-                    if (step >= timeUnitSize.minute)
-                        d.setUTCSeconds(0);
-                    if (step >= timeUnitSize.hour)
-                        d.setUTCMinutes(0);
-                    if (step >= timeUnitSize.day)
-                        d.setUTCHours(0);
-                    if (step >= timeUnitSize.day * 4)
-                        d.setUTCDate(1);
-                    if (step >= timeUnitSize.year)
-                        d.setUTCMonth(0);
-
-
-                    var carry = 0, v = Number.NaN, prev;
-                    do {
-                        prev = v;
-                        v = d.getTime();
-                        ticks.push(v);
-                        if (unit == "month") {
-                            if (tickSize < 1) {
-                                // a bit complicated - we'll divide the month
-                                // up but we need to take care of fractions
-                                // so we don't end up in the middle of a day
-                                d.setUTCDate(1);
-                                var start = d.getTime();
-                                d.setUTCMonth(d.getUTCMonth() + 1);
-                                var end = d.getTime();
-                                d.setTime(v + carry * timeUnitSize.hour + (end - start) * tickSize);
-                                carry = d.getUTCHours();
-                                d.setUTCHours(0);
-                            }
-                            else
-                                d.setUTCMonth(d.getUTCMonth() + tickSize);
-                        }
-                        else if (unit == "year") {
-                            d.setUTCFullYear(d.getUTCFullYear() + tickSize);
-                        }
-                        else
-                            d.setTime(v + step);
-                    } while (v < axis.max && v != prev);
-
-                    return ticks;
-                };
-
-                formatter = function (v, axis) {
-                    var d = new Date(v);
-
-                    // first check global format
-                    if (opts.timeformat != null)
-                        return $.plot.formatDate(d, opts.timeformat, opts.monthNames);
-                    
-                    var t = axis.tickSize[0] * timeUnitSize[axis.tickSize[1]];
-                    var span = axis.max - axis.min;
-                    var suffix = (opts.twelveHourClock) ? " %p" : "";
-                    
-                    if (t < timeUnitSize.minute)
-                        fmt = "%h:%M:%S" + suffix;
-                    else if (t < timeUnitSize.day) {
-                        if (span < 2 * timeUnitSize.day)
-                            fmt = "%h:%M" + suffix;
-                        else
-                            fmt = "%b %d %h:%M" + suffix;
-                    }
-                    else if (t < timeUnitSize.month)
-                        fmt = "%b %d";
-                    else if (t < timeUnitSize.year) {
-                        if (span < timeUnitSize.year)
-                            fmt = "%b";
-                        else
-                            fmt = "%b %y";
-                    }
-                    else
-                        fmt = "%y";
-                    
-                    return $.plot.formatDate(d, fmt, opts.monthNames);
-                };
-            }
-            else {
-                // pretty rounding of base-10 numbers
-                var maxDec = opts.tickDecimals;
-                var dec = -Math.floor(Math.log(delta) / Math.LN10);
-                if (maxDec != null && dec > maxDec)
-                    dec = maxDec;
-
-                magn = Math.pow(10, -dec);
-                norm = delta / magn; // norm is between 1.0 and 10.0
-                
-                if (norm < 1.5)
-                    size = 1;
-                else if (norm < 3) {
-                    size = 2;
-                    // special case for 2.5, requires an extra decimal
-                    if (norm > 2.25 && (maxDec == null || dec + 1 <= maxDec)) {
-                        size = 2.5;
-                        ++dec;
-                    }
-                }
-                else if (norm < 7.5)
-                    size = 5;
-                else
-                    size = 10;
-
-                size *= magn;
-                
-                if (opts.minTickSize != null && size < opts.minTickSize)
-                    size = opts.minTickSize;
-
-                axis.tickDecimals = Math.max(0, maxDec != null ? maxDec : dec);
-                axis.tickSize = opts.tickSize || size;
-
-                generator = function (axis) {
-                    var ticks = [];
-
-                    // spew out all possible ticks
-                    var start = floorInBase(axis.min, axis.tickSize),
-                        i = 0, v = Number.NaN, prev;
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     do {
                         prev = v;
                         v = start + i * axis.tickSize;
@@ -2518,7 +1684,6 @@ Licensed under the MIT license.
                     return ticks;
                 };
 
-<<<<<<< HEAD
 				axis.tickFormatter = function (value, axis) {
 
 					var factor = axis.tickDecimals ? Math.pow(10, axis.tickDecimals) : 1;
@@ -2542,35 +1707,19 @@ Licensed under the MIT license.
             if ($.isFunction(opts.tickFormatter))
                 axis.tickFormatter = function (v, axis) { return "" + opts.tickFormatter(v, axis); };
 
-=======
-                formatter = function (v, axis) {
-                    return v.toFixed(axis.tickDecimals);
-                };
-            }
-
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             if (opts.alignTicksWithAxis != null) {
                 var otherAxis = (axis.direction == "x" ? xaxes : yaxes)[opts.alignTicksWithAxis - 1];
                 if (otherAxis && otherAxis.used && otherAxis != axis) {
                     // consider snapping min/max to outermost nice ticks
-<<<<<<< HEAD
                     var niceTicks = axis.tickGenerator(axis);
-=======
-                    var niceTicks = generator(axis);
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     if (niceTicks.length > 0) {
                         if (opts.min == null)
                             axis.min = Math.min(axis.min, niceTicks[0]);
                         if (opts.max == null && niceTicks.length > 1)
                             axis.max = Math.max(axis.max, niceTicks[niceTicks.length - 1]);
                     }
-<<<<<<< HEAD
 
                     axis.tickGenerator = function (axis) {
-=======
-                    
-                    generator = function (axis) {
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                         // copy ticks, scaled to this axis
                         var ticks = [], v, i;
                         for (i = 0; i < otherAxis.ticks.length; ++i) {
@@ -2580,21 +1729,12 @@ Licensed under the MIT license.
                         }
                         return ticks;
                     };
-<<<<<<< HEAD
 
                     // we might need an extra decimal since forced
                     // ticks don't necessarily fit naturally
                     if (!axis.mode && opts.tickDecimals == null) {
                         var extraDec = Math.max(0, -Math.floor(Math.log(axis.delta) / Math.LN10) + 1),
                             ts = axis.tickGenerator(axis);
-=======
-                    
-                    // we might need an extra decimal since forced
-                    // ticks don't necessarily fit naturally
-                    if (axis.mode != "time" && opts.tickDecimals == null) {
-                        var extraDec = Math.max(0, -Math.floor(Math.log(delta) / Math.LN10) + 1),
-                            ts = generator(axis);
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 
                         // only proceed if the tick interval rounded
                         // with an extra decimal doesn't give us a
@@ -2604,19 +1744,8 @@ Licensed under the MIT license.
                     }
                 }
             }
-<<<<<<< HEAD
         }
 
-=======
-
-            axis.tickGenerator = generator;
-            if ($.isFunction(opts.tickFormatter))
-                axis.tickFormatter = function (v, axis) { return "" + opts.tickFormatter(v, axis); };
-            else
-                axis.tickFormatter = formatter;
-        }
-        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         function setTicks(axis) {
             var oticks = axis.options.ticks, ticks = [];
             if (oticks == null || (typeof oticks == "number" && oticks > 0))
@@ -2624,11 +1753,7 @@ Licensed under the MIT license.
             else if (oticks) {
                 if ($.isFunction(oticks))
                     // generate the ticks
-<<<<<<< HEAD
                     ticks = oticks(axis);
-=======
-                    ticks = oticks({ min: axis.min, max: axis.max });
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 else
                     ticks = oticks;
             }
@@ -2662,34 +1787,22 @@ Licensed under the MIT license.
                     axis.max = Math.max(axis.max, ticks[ticks.length - 1].v);
             }
         }
-<<<<<<< HEAD
 
         function draw() {
 
             surface.clear();
 
             executeHooks(hooks.drawBackground, [ctx]);
-=======
-      
-        function draw() {
-            ctx.clearRect(0, 0, canvasWidth, canvasHeight);
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 
             var grid = options.grid;
 
             // draw background, if any
             if (grid.show && grid.backgroundColor)
                 drawBackground();
-<<<<<<< HEAD
 
             if (grid.show && !grid.aboveData) {
                 drawGrid();
             }
-=======
-            
-            if (grid.show && !grid.aboveData)
-                drawGrid();
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 
             for (var i = 0; i < series.length; ++i) {
                 executeHooks(hooks.drawSeries, [ctx, series[i]]);
@@ -2697,7 +1810,6 @@ Licensed under the MIT license.
             }
 
             executeHooks(hooks.draw, [ctx]);
-<<<<<<< HEAD
 
             if (grid.show && grid.aboveData) {
                 drawGrid();
@@ -2709,21 +1821,12 @@ Licensed under the MIT license.
             // should probably update the overlay highlights as well.
 
             triggerRedrawOverlay();
-=======
-            
-            if (grid.show && grid.aboveData)
-                drawGrid();
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         }
 
         function extractRange(ranges, coord) {
             var axis, from, to, key, axes = allAxes();
 
-<<<<<<< HEAD
             for (var i = 0; i < axes.length; ++i) {
-=======
-            for (i = 0; i < axes.length; ++i) {
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 axis = axes[i];
                 if (axis.direction == coord) {
                     key = coord + axis.n + "axis";
@@ -2750,17 +1853,10 @@ Licensed under the MIT license.
                 from = to;
                 to = tmp;
             }
-<<<<<<< HEAD
 
             return { from: from, to: to, axis: axis };
         }
 
-=======
-            
-            return { from: from, to: to, axis: axis };
-        }
-        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         function drawBackground() {
             ctx.save();
             ctx.translate(plotOffset.left, plotOffset.top);
@@ -2771,13 +1867,8 @@ Licensed under the MIT license.
         }
 
         function drawGrid() {
-<<<<<<< HEAD
             var i, axes, bw, bc;
 
-=======
-            var i;
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             ctx.save();
             ctx.translate(plotOffset.left, plotOffset.top);
 
@@ -2785,22 +1876,14 @@ Licensed under the MIT license.
             var markings = options.grid.markings;
             if (markings) {
                 if ($.isFunction(markings)) {
-<<<<<<< HEAD
                     axes = plot.getAxes();
-=======
-                    var axes = plot.getAxes();
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     // xmin etc. is backwards compatibility, to be
                     // removed in the future
                     axes.xmin = axes.xaxis.min;
                     axes.xmax = axes.xaxis.max;
                     axes.ymin = axes.yaxis.min;
                     axes.ymax = axes.yaxis.max;
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     markings = markings(axes);
                 }
 
@@ -2837,11 +1920,7 @@ Licensed under the MIT license.
                     xrange.to = xrange.axis.p2c(xrange.to);
                     yrange.from = yrange.axis.p2c(yrange.from);
                     yrange.to = yrange.axis.p2c(yrange.to);
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     if (xrange.from == xrange.to || yrange.from == yrange.to) {
                         // draw line
                         ctx.beginPath();
@@ -2860,29 +1939,17 @@ Licensed under the MIT license.
                     }
                 }
             }
-<<<<<<< HEAD
 
             // draw the ticks
             axes = allAxes();
             bw = options.grid.borderWidth;
-=======
-            
-            // draw the ticks
-            var axes = allAxes(), bw = options.grid.borderWidth;
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 
             for (var j = 0; j < axes.length; ++j) {
                 var axis = axes[j], box = axis.box,
                     t = axis.tickLength, x, y, xoff, yoff;
                 if (!axis.show || axis.ticks.length == 0)
-<<<<<<< HEAD
                     continue;
 
-=======
-                    continue
-                
-                ctx.strokeStyle = axis.options.tickColor || $.color.parse(axis.options.color).scale('a', 0.22).toString();
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 ctx.lineWidth = 1;
 
                 // find the edges
@@ -2900,7 +1967,6 @@ Licensed under the MIT license.
                     else
                         x = box.left - plotOffset.left + (axis.position == "left" ? box.width : 0);
                 }
-<<<<<<< HEAD
 
                 // draw tick bar
                 if (!axis.innermost) {
@@ -2918,21 +1984,6 @@ Licensed under the MIT license.
                         } else {
                             x = Math.floor(x) + 0.5;
                         }
-=======
-                
-                // draw tick bar
-                if (!axis.innermost) {
-                    ctx.beginPath();
-                    xoff = yoff = 0;
-                    if (axis.direction == "x")
-                        xoff = plotWidth;
-                    else
-                        yoff = plotHeight;
-                    
-                    if (ctx.lineWidth == 1) {
-                        x = Math.floor(x) + 0.5;
-                        y = Math.floor(y) + 0.5;
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     }
 
                     ctx.moveTo(x, y);
@@ -2941,7 +1992,6 @@ Licensed under the MIT license.
                 }
 
                 // draw ticks
-<<<<<<< HEAD
 
                 ctx.strokeStyle = axis.options.tickColor;
 
@@ -2955,39 +2005,20 @@ Licensed under the MIT license.
                         // skip those lying on the axes if we got a border
                         || (t == "full"
                             && ((typeof bw == "object" && bw[axis.position] > 0) || bw > 0)
-=======
-                ctx.beginPath();
-                for (i = 0; i < axis.ticks.length; ++i) {
-                    var v = axis.ticks[i].v;
-                    
-                    xoff = yoff = 0;
-
-                    if (v < axis.min || v > axis.max
-                        // skip those lying on the axes if we got a border
-                        || (t == "full" && bw > 0
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                             && (v == axis.min || v == axis.max)))
                         continue;
 
                     if (axis.direction == "x") {
                         x = axis.p2c(v);
                         yoff = t == "full" ? -plotHeight : t;
-<<<<<<< HEAD
 
-=======
-                        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                         if (axis.position == "top")
                             yoff = -yoff;
                     }
                     else {
                         y = axis.p2c(v);
                         xoff = t == "full" ? -plotWidth : t;
-<<<<<<< HEAD
 
-=======
-                        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                         if (axis.position == "left")
                             xoff = -xoff;
                     }
@@ -3002,7 +2033,6 @@ Licensed under the MIT license.
                     ctx.moveTo(x, y);
                     ctx.lineTo(x + xoff, y + yoff);
                 }
-<<<<<<< HEAD
 
                 ctx.stroke();
             }
@@ -3062,24 +2092,11 @@ Licensed under the MIT license.
                     ctx.strokeStyle = options.grid.borderColor;
                     ctx.strokeRect(-bw/2, -bw/2, plotWidth + bw, plotHeight + bw);
                 }
-=======
-                
-                ctx.stroke();
-            }
-            
-            
-            // draw border
-            if (bw) {
-                ctx.lineWidth = bw;
-                ctx.strokeStyle = options.grid.borderColor;
-                ctx.strokeRect(-bw/2, -bw/2, plotWidth + bw, plotHeight + bw);
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             }
 
             ctx.restore();
         }
 
-<<<<<<< HEAD
         function drawAxisLabels() {
 
             $.each(allAxes(), function (_, axis) {
@@ -3123,61 +2140,6 @@ Licensed under the MIT license.
                     surface.addText(layer, x, y, tick.label, font, null, null, halign, valign);
                 }
             });
-=======
-        function insertAxisLabels() {
-            placeholder.find(".tickLabels").remove();
-            
-            var html = ['<div class="tickLabels" style="font-size:smaller">'];
-
-            var axes = allAxes();
-            for (var j = 0; j < axes.length; ++j) {
-                var axis = axes[j], box = axis.box;
-                if (!axis.show)
-                    continue;
-                //debug: html.push('<div style="position:absolute;opacity:0.10;background-color:red;left:' + box.left + 'px;top:' + box.top + 'px;width:' + box.width +  'px;height:' + box.height + 'px"></div>')
-                html.push('<div class="' + axis.direction + 'Axis ' + axis.direction + axis.n + 'Axis" style="color:' + axis.options.color + '">');
-                for (var i = 0; i < axis.ticks.length; ++i) {
-                    var tick = axis.ticks[i];
-                    if (!tick.label || tick.v < axis.min || tick.v > axis.max)
-                        continue;
-
-                    var pos = {}, align;
-                    
-                    if (axis.direction == "x") {
-                        align = "center";
-                        pos.left = Math.round(plotOffset.left + axis.p2c(tick.v) - axis.labelWidth/2);
-                        if (axis.position == "bottom")
-                            pos.top = box.top + box.padding;
-                        else
-                            pos.bottom = canvasHeight - (box.top + box.height - box.padding);
-                    }
-                    else {
-                        pos.top = Math.round(plotOffset.top + axis.p2c(tick.v) - axis.labelHeight/2);
-                        if (axis.position == "left") {
-                            pos.right = canvasWidth - (box.left + box.width - box.padding)
-                            align = "right";
-                        }
-                        else {
-                            pos.left = box.left + box.padding;
-                            align = "left";
-                        }
-                    }
-
-                    pos.width = axis.labelWidth;
-
-                    var style = ["position:absolute", "text-align:" + align ];
-                    for (var a in pos)
-                        style.push(a + ":" + pos[a] + "px")
-                    
-                    html.push('<div class="tickLabel" style="' + style.join(';') + '">' + tick.label + '</div>');
-                }
-                html.push('</div>');
-            }
-
-            html.push('</div>');
-
-            placeholder.append(html.join(""));
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         }
 
         function drawSeries(series) {
@@ -3188,30 +2150,18 @@ Licensed under the MIT license.
             if (series.points.show)
                 drawSeriesPoints(series);
         }
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         function drawSeriesLines(series) {
             function plotLine(datapoints, xoffset, yoffset, axisx, axisy) {
                 var points = datapoints.points,
                     ps = datapoints.pointsize,
                     prevx = null, prevy = null;
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 ctx.beginPath();
                 for (var i = ps; i < points.length; i += ps) {
                     var x1 = points[i - ps], y1 = points[i - ps + 1],
                         x2 = points[i], y2 = points[i + 1];
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     if (x1 == null || x2 == null)
                         continue;
 
@@ -3274,11 +2224,7 @@ Licensed under the MIT license.
 
                     if (x1 != prevx || y1 != prevy)
                         ctx.moveTo(axisx.p2c(x1) + xoffset, axisy.p2c(y1) + yoffset);
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     prevx = x2;
                     prevy = y2;
                     ctx.lineTo(axisx.p2c(x2) + xoffset, axisy.p2c(y2) + yoffset);
@@ -3330,11 +2276,7 @@ Licensed under the MIT license.
                         continue;
 
                     // clip x values
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     // clip with xmin
                     if (x1 <= x2 && x1 < axisx.min) {
                         if (x2 < axisx.min)
@@ -3369,11 +2311,7 @@ Licensed under the MIT license.
                         ctx.moveTo(axisx.p2c(x1), axisy.p2c(bottom));
                         areaOpen = true;
                     }
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     // now first check the case where both is outside
                     if (y1 >= axisy.max && y2 >= axisy.max) {
                         ctx.lineTo(axisx.p2c(x1), axisy.p2c(axisy.max));
@@ -3385,11 +2323,7 @@ Licensed under the MIT license.
                         ctx.lineTo(axisx.p2c(x2), axisy.p2c(axisy.min));
                         continue;
                     }
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     // else it's a bit more complicated, there might
                     // be a flat maxed out rectangle first, then a
                     // triangular cutout or reverse; to find these
@@ -3398,11 +2332,7 @@ Licensed under the MIT license.
 
                     // clip the y values, without shortcutting, we
                     // go through all cases in turn
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     // clip with ymin
                     if (y1 <= y2 && y1 < axisy.min && y2 >= axisy.min) {
                         x1 = (axisy.min - y1) / (y2 - y1) * (x2 - x1) + x1;
@@ -3429,11 +2359,7 @@ Licensed under the MIT license.
                         ctx.lineTo(axisx.p2c(x1old), axisy.p2c(y1));
                         // it goes to (x1, y1), but we fill that below
                     }
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     // fill triangular section, this sometimes result
                     // in redundant points if (x1, y1) hasn't changed
                     // from previous line to, but we just ignore that
@@ -3487,11 +2413,7 @@ Licensed under the MIT license.
                     var x = points[i], y = points[i + 1];
                     if (x == null || x < axisx.min || x > axisx.max || y < axisy.min || y > axisy.max)
                         continue;
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     ctx.beginPath();
                     x = axisx.p2c(x);
                     y = axisy.p2c(y) + offset;
@@ -3500,11 +2422,7 @@ Licensed under the MIT license.
                     else
                         symbol(ctx, x, y, radius, shadow);
                     ctx.closePath();
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     if (fillStyle) {
                         ctx.fillStyle = fillStyle;
                         ctx.fill();
@@ -3512,11 +2430,7 @@ Licensed under the MIT license.
                     ctx.stroke();
                 }
             }
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             ctx.save();
             ctx.translate(plotOffset.left, plotOffset.top);
 
@@ -3524,7 +2438,6 @@ Licensed under the MIT license.
                 sw = series.shadowSize,
                 radius = series.points.radius,
                 symbol = series.points.symbol;
-<<<<<<< HEAD
 
             // If the user sets the line width to 0, we change it to a very 
             // small value. A line width of 0 seems to force the default of 1.
@@ -3534,8 +2447,6 @@ Licensed under the MIT license.
             if( lw == 0 )
                 lw = 0.0001;
 
-=======
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             if (lw > 0 && sw > 0) {
                 // draw shadow in two steps
                 var w = sw / 2;
@@ -3599,20 +2510,12 @@ Licensed under the MIT license.
                     drawTop = false;
                 }
             }
-<<<<<<< HEAD
 
-=======
-           
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             // clip
             if (right < axisx.min || left > axisx.max ||
                 top < axisy.min || bottom > axisy.max)
                 return;
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             if (left < axisx.min) {
                 left = axisx.min;
                 drawLeft = false;
@@ -3627,11 +2530,7 @@ Licensed under the MIT license.
                 bottom = axisy.min;
                 drawBottom = false;
             }
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             if (top > axisy.max) {
                 top = axisy.max;
                 drawTop = false;
@@ -3641,11 +2540,7 @@ Licensed under the MIT license.
             bottom = axisy.p2c(bottom);
             right = axisx.p2c(right);
             top = axisy.p2c(top);
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             // fill the bar
             if (fillStyleCallback) {
                 c.beginPath();
@@ -3682,19 +2577,11 @@ Licensed under the MIT license.
                 c.stroke();
             }
         }
-<<<<<<< HEAD
 
         function drawSeriesBars(series) {
             function plotBars(datapoints, barLeft, barRight, offset, fillStyleCallback, axisx, axisy) {
                 var points = datapoints.points, ps = datapoints.pointsize;
 
-=======
-        
-        function drawSeriesBars(series) {
-            function plotBars(datapoints, barLeft, barRight, offset, fillStyleCallback, axisx, axisy) {
-                var points = datapoints.points, ps = datapoints.pointsize;
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 for (var i = 0; i < points.length; i += ps) {
                     if (points[i] == null)
                         continue;
@@ -3708,7 +2595,6 @@ Licensed under the MIT license.
             // FIXME: figure out a way to add shadows (for instance along the right edge)
             ctx.lineWidth = series.bars.lineWidth;
             ctx.strokeStyle = series.color;
-<<<<<<< HEAD
 
             var barLeft;
 
@@ -3726,9 +2612,6 @@ Licensed under the MIT license.
                     throw new Error("Invalid bar alignment: " + series.bars.align);
             }
 
-=======
-            var barLeft = series.bars.align == "left" ? 0 : -series.bars.barWidth/2;
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             var fillStyleCallback = series.bars.fill ? function (bottom, top) { return getFillStyle(series.bars, series.color, bottom, top); } : null;
             plotBars(series.datapoints, barLeft, barLeft + series.bars.barWidth, 0, fillStyleCallback, series.xaxis, series.yaxis);
             ctx.restore();
@@ -3741,29 +2624,19 @@ Licensed under the MIT license.
 
             if (filloptions.fillColor)
                 return getColorOrGradient(filloptions.fillColor, bottom, top, seriesColor);
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             var c = $.color.parse(seriesColor);
             c.a = typeof fill == "number" ? fill : 0.4;
             c.normalize();
             return c.toString();
         }
-<<<<<<< HEAD
 
         function insertLegend() {
 
-=======
-        
-        function insertLegend() {
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             placeholder.find(".legend").remove();
 
             if (!options.legend.show)
                 return;
-<<<<<<< HEAD
 
             var fragments = [], entries = [], rowStarted = false,
                 lf = options.legend.labelFormatter, s, label;
@@ -3806,17 +2679,6 @@ Licensed under the MIT license.
 
                 var entry = entries[i];
 
-=======
-            
-            var fragments = [], rowStarted = false,
-                lf = options.legend.labelFormatter, s, label;
-            for (var i = 0; i < series.length; ++i) {
-                s = series[i];
-                label = s.label;
-                if (!label)
-                    continue;
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 if (i % options.legend.noColumns == 0) {
                     if (rowStarted)
                         fragments.push('</tr>');
@@ -3824,7 +2686,6 @@ Licensed under the MIT license.
                     rowStarted = true;
                 }
 
-<<<<<<< HEAD
                 fragments.push(
                     '<td class="legendColorBox"><div style="border:1px solid ' + options.legend.labelBoxBorderColor + ';padding:1px"><div style="width:4px;height:0;border:5px solid ' + entry.color + ';overflow:hidden"></div></div></td>' +
                     '<td class="legendLabel">' + entry.label + '</td>'
@@ -3834,18 +2695,6 @@ Licensed under the MIT license.
             if (rowStarted)
                 fragments.push('</tr>');
 
-=======
-                if (lf)
-                    label = lf(label, s);
-                
-                fragments.push(
-                    '<td class="legendColorBox"><div style="border:1px solid ' + options.legend.labelBoxBorderColor + ';padding:1px"><div style="width:4px;height:0;border:5px solid ' + s.color + ';overflow:hidden"></div></div></td>' +
-                    '<td class="legendLabel">' + label + '</td>');
-            }
-            if (rowStarted)
-                fragments.push('</tr>');
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             if (fragments.length == 0)
                 return;
 
@@ -3889,73 +2738,43 @@ Licensed under the MIT license.
 
 
         // interactive features
-<<<<<<< HEAD
 
         var highlights = [],
             redrawTimeout = null;
 
-=======
-        
-        var highlights = [],
-            redrawTimeout = null;
-        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         // returns the data item the mouse is over, or null if none is found
         function findNearbyItem(mouseX, mouseY, seriesFilter) {
             var maxDistance = options.grid.mouseActiveRadius,
                 smallestDistance = maxDistance * maxDistance + 1,
-<<<<<<< HEAD
                 item = null, foundPoint = false, i, j, ps;
-=======
-                item = null, foundPoint = false, i, j;
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 
             for (i = series.length - 1; i >= 0; --i) {
                 if (!seriesFilter(series[i]))
                     continue;
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 var s = series[i],
                     axisx = s.xaxis,
                     axisy = s.yaxis,
                     points = s.datapoints.points,
-<<<<<<< HEAD
-=======
-                    ps = s.datapoints.pointsize,
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     mx = axisx.c2p(mouseX), // precompute some stuff to make the loop faster
                     my = axisy.c2p(mouseY),
                     maxx = maxDistance / axisx.scale,
                     maxy = maxDistance / axisy.scale;
 
-<<<<<<< HEAD
                 ps = s.datapoints.pointsize;
-=======
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 // with inverse transforms, we can't use the maxx/maxy
                 // optimization, sadly
                 if (axisx.options.inverseTransform)
                     maxx = Number.MAX_VALUE;
                 if (axisy.options.inverseTransform)
                     maxy = Number.MAX_VALUE;
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 if (s.lines.show || s.points.show) {
                     for (j = 0; j < points.length; j += ps) {
                         var x = points[j], y = points[j + 1];
                         if (x == null)
                             continue;
-<<<<<<< HEAD
 
-=======
-                        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                         // For points and lines, the cursor must be within a
                         // certain distance to the data point
                         if (x - mx > maxx || x - mx < -maxx ||
@@ -3976,34 +2795,19 @@ Licensed under the MIT license.
                         }
                     }
                 }
-<<<<<<< HEAD
 
                 if (s.bars.show && !item) { // no other point can be nearby
                     var barLeft = s.bars.align == "left" ? 0 : -s.bars.barWidth/2,
                         barRight = barLeft + s.bars.barWidth;
 
-=======
-                    
-                if (s.bars.show && !item) { // no other point can be nearby
-                    var barLeft = s.bars.align == "left" ? 0 : -s.bars.barWidth/2,
-                        barRight = barLeft + s.bars.barWidth;
-                    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                     for (j = 0; j < points.length; j += ps) {
                         var x = points[j], y = points[j + 1], b = points[j + 2];
                         if (x == null)
                             continue;
-<<<<<<< HEAD
 
                         // for a bar graph, the cursor must be inside the bar
                         if (series[i].bars.horizontal ?
                             (mx <= Math.max(b, x) && mx >= Math.min(b, x) &&
-=======
-  
-                        // for a bar graph, the cursor must be inside the bar
-                        if (series[i].bars.horizontal ? 
-                            (mx <= Math.max(b, x) && mx >= Math.min(b, x) && 
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                              my >= y + barLeft && my <= y + barRight) :
                             (mx >= x + barLeft && mx <= x + barRight &&
                              my >= Math.min(b, y) && my <= Math.max(b, y)))
@@ -4016,21 +2820,13 @@ Licensed under the MIT license.
                 i = item[0];
                 j = item[1];
                 ps = series[i].datapoints.pointsize;
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 return { datapoint: series[i].datapoints.points.slice(j * ps, (j + 1) * ps),
                          dataIndex: j,
                          series: series[i],
                          seriesIndex: i };
             }
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             return null;
         }
 
@@ -4066,13 +2862,8 @@ Licensed under the MIT license.
 
             if (item) {
                 // fill in mouse pos for any listeners out there
-<<<<<<< HEAD
                 item.pageX = parseInt(item.series.xaxis.p2c(item.datapoint[0]) + offset.left + plotOffset.left, 10);
                 item.pageY = parseInt(item.series.yaxis.p2c(item.datapoint[1]) + offset.top + plotOffset.top, 10);
-=======
-                item.pageX = parseInt(item.series.xaxis.p2c(item.datapoint[0]) + offset.left + plotOffset.left);
-                item.pageY = parseInt(item.series.yaxis.p2c(item.datapoint[1]) + offset.top + plotOffset.top);
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             }
 
             if (options.grid.autoHighlight) {
@@ -4085,24 +2876,15 @@ Licensed under the MIT license.
                           h.point[1] == item.datapoint[1]))
                         unhighlight(h.series, h.point);
                 }
-<<<<<<< HEAD
 
                 if (item)
                     highlight(item.series, item.datapoint, eventname);
             }
 
-=======
-                
-                if (item)
-                    highlight(item.series, item.datapoint, eventname);
-            }
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             placeholder.trigger(eventname, [ pos, item ]);
         }
 
         function triggerRedrawOverlay() {
-<<<<<<< HEAD
             var t = options.interaction.redrawOverlayInterval;
             if (t == -1) {      // skip event queue
                 drawOverlay();
@@ -4111,10 +2893,6 @@ Licensed under the MIT license.
 
             if (!redrawTimeout)
                 redrawTimeout = setTimeout(drawOverlay, t);
-=======
-            if (!redrawTimeout)
-                redrawTimeout = setTimeout(drawOverlay, 30);
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         }
 
         function drawOverlay() {
@@ -4122,15 +2900,9 @@ Licensed under the MIT license.
 
             // draw highlights
             octx.save();
-<<<<<<< HEAD
             overlay.clear();
             octx.translate(plotOffset.left, plotOffset.top);
 
-=======
-            octx.clearRect(0, 0, canvasWidth, canvasHeight);
-            octx.translate(plotOffset.left, plotOffset.top);
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             var i, hi;
             for (i = 0; i < highlights.length; ++i) {
                 hi = highlights[i];
@@ -4141,17 +2913,10 @@ Licensed under the MIT license.
                     drawPointHighlight(hi.series, hi.point);
             }
             octx.restore();
-<<<<<<< HEAD
 
             executeHooks(hooks.drawOverlay, [octx]);
         }
 
-=======
-            
-            executeHooks(hooks.drawOverlay, [octx]);
-        }
-        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         function highlight(s, point, auto) {
             if (typeof s == "number")
                 s = series[s];
@@ -4170,16 +2935,11 @@ Licensed under the MIT license.
             else if (!auto)
                 highlights[i].auto = false;
         }
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         function unhighlight(s, point) {
             if (s == null && point == null) {
                 highlights = [];
                 triggerRedrawOverlay();
-<<<<<<< HEAD
                 return;
             }
 
@@ -4190,15 +2950,6 @@ Licensed under the MIT license.
                 var ps = s.datapoints.pointsize;
                 point = s.datapoints.points.slice(ps * point, ps * (point + 1));
             }
-=======
-            }
-            
-            if (typeof s == "number")
-                s = series[s];
-
-            if (typeof point == "number")
-                point = s.data[point];
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 
             var i = indexOfHighlight(s, point);
             if (i != -1) {
@@ -4207,11 +2958,7 @@ Licensed under the MIT license.
                 triggerRedrawOverlay();
             }
         }
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
         function indexOfHighlight(s, p) {
             for (var i = 0; i < highlights.length; ++i) {
                 var h = highlights[i];
@@ -4221,7 +2968,6 @@ Licensed under the MIT license.
             }
             return -1;
         }
-<<<<<<< HEAD
 
         function drawPointHighlight(series, point) {
             var x = point[0], y = point[1],
@@ -4238,23 +2984,6 @@ Licensed under the MIT license.
             x = axisx.p2c(x);
             y = axisy.p2c(y);
 
-=======
-        
-        function drawPointHighlight(series, point) {
-            var x = point[0], y = point[1],
-                axisx = series.xaxis, axisy = series.yaxis;
-            
-            if (x < axisx.min || x > axisx.max || y < axisy.min || y > axisy.max)
-                return;
-            
-            var pointRadius = series.points.radius + series.points.lineWidth / 2;
-            octx.lineWidth = pointRadius;
-            octx.strokeStyle = $.color.parse(series.color).scale('a', 0.5).toString();
-            var radius = 1.5 * pointRadius,
-                x = axisx.p2c(x),
-                y = axisy.p2c(y);
-            
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             octx.beginPath();
             if (series.points.symbol == "circle")
                 octx.arc(x, y, radius, 0, 2 * Math.PI, false);
@@ -4265,7 +2994,6 @@ Licensed under the MIT license.
         }
 
         function drawBarHighlight(series, point) {
-<<<<<<< HEAD
             var highlightColor = (typeof series.highlightColor === "string") ? series.highlightColor : $.color.parse(series.color).scale('a', 0.5).toString(),
                 fillStyle = highlightColor,
                 barLeft = series.bars.align == "left" ? 0 : -series.bars.barWidth/2;
@@ -4273,12 +3001,6 @@ Licensed under the MIT license.
             octx.lineWidth = series.bars.lineWidth;
             octx.strokeStyle = highlightColor;
 
-=======
-            octx.lineWidth = series.bars.lineWidth;
-            octx.strokeStyle = $.color.parse(series.color).scale('a', 0.5).toString();
-            var fillStyle = $.color.parse(series.color).scale('a', 0.5).toString();
-            var barLeft = series.bars.align == "left" ? 0 : -series.bars.barWidth/2;
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
             drawBar(point[0], point[1], point[2] || 0, barLeft, barLeft + series.bars.barWidth,
                     0, function () { return fillStyle; }, series.xaxis, series.yaxis, octx, series.bars.horizontal, series.bars.lineWidth);
         }
@@ -4291,42 +3013,27 @@ Licensed under the MIT license.
                 // supports a simple vertical gradient properly, so that's
                 // what we support too
                 var gradient = ctx.createLinearGradient(0, top, 0, bottom);
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 for (var i = 0, l = spec.colors.length; i < l; ++i) {
                     var c = spec.colors[i];
                     if (typeof c != "string") {
                         var co = $.color.parse(defaultColor);
                         if (c.brightness != null)
-<<<<<<< HEAD
                             co = co.scale('rgb', c.brightness);
-=======
-                            co = co.scale('rgb', c.brightness)
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                         if (c.opacity != null)
                             co.a *= c.opacity;
                         c = co.toString();
                     }
                     gradient.addColorStop(i / (l - 1), c);
                 }
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
                 return gradient;
             }
         }
     }
 
-<<<<<<< HEAD
     // Add the plot function to the top level of the jQuery object
 
-=======
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
     $.plot = function(placeholder, data, options) {
         //var t0 = new Date();
         var plot = new Plot($(placeholder), data, options, $.plot.plugins);
@@ -4334,7 +3041,6 @@ Licensed under the MIT license.
         return plot;
     };
 
-<<<<<<< HEAD
     $.plot.version = "0.8.1";
 
     $.plot.plugins = [];
@@ -4347,75 +3053,9 @@ Licensed under the MIT license.
         });
     };
 
-=======
-    $.plot.version = "0.7";
-    
-    $.plot.plugins = [];
-
-    // returns a string with the date d formatted according to fmt
-    $.plot.formatDate = function(d, fmt, monthNames) {
-        var leftPad = function(n) {
-            n = "" + n;
-            return n.length == 1 ? "0" + n : n;
-        };
-        
-        var r = [];
-        var escape = false, padNext = false;
-        var hours = d.getUTCHours();
-        var isAM = hours < 12;
-        if (monthNames == null)
-            monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-        if (fmt.search(/%p|%P/) != -1) {
-            if (hours > 12) {
-                hours = hours - 12;
-            } else if (hours == 0) {
-                hours = 12;
-            }
-        }
-        for (var i = 0; i < fmt.length; ++i) {
-            var c = fmt.charAt(i);
-            
-            if (escape) {
-                switch (c) {
-                case 'h': c = "" + hours; break;
-                case 'H': c = leftPad(hours); break;
-                case 'M': c = leftPad(d.getUTCMinutes()); break;
-                case 'S': c = leftPad(d.getUTCSeconds()); break;
-                case 'd': c = "" + d.getUTCDate(); break;
-                case 'm': c = "" + (d.getUTCMonth() + 1); break;
-                case 'y': c = "" + d.getUTCFullYear(); break;
-                case 'b': c = "" + monthNames[d.getUTCMonth()]; break;
-                case 'p': c = (isAM) ? ("" + "am") : ("" + "pm"); break;
-                case 'P': c = (isAM) ? ("" + "AM") : ("" + "PM"); break;
-                case '0': c = ""; padNext = true; break;
-                }
-                if (c && padNext) {
-                    c = leftPad(c);
-                    padNext = false;
-                }
-                r.push(c);
-                if (!padNext)
-                    escape = false;
-            }
-            else {
-                if (c == "%")
-                    escape = true;
-                else
-                    r.push(c);
-            }
-        }
-        return r.join("");
-    };
-    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
     // round to nearby lower multiple of base
     function floorInBase(n, base) {
         return base * Math.floor(n / base);
     }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 })(jQuery);

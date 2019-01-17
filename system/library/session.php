@@ -1,6 +1,5 @@
 <?php
 class Session {
-<<<<<<< HEAD
 	public $session_id = '';
 	public $data = array();
 
@@ -78,20 +77,3 @@ class Session {
 		setcookie($key, '', time() - 42000, ini_get('session.cookie_path'), ini_get('session.cookie_domain'));
 	}
 }
-=======
-	public $data = array();
-			
-  	public function __construct() {		
-		if (!session_id()) {
-			ini_set('session.use_cookies', 'On');
-			ini_set('session.use_trans_sid', 'Off');
-			
-			session_set_cookie_params(0, '/');
-			session_start();
-		}
-	
-		$this->data =& $_SESSION;
-	}
-}
-?>
->>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
