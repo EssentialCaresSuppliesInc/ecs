@@ -1,0 +1,39 @@
+---------- Date: 2013-05-06 15:34:00 ~ IP : 121.54.41.122 ----------
+REQUEST URI : /index.php?route=product/search&amp;filter_name=adenna%20gloves
+MOD DETAILS:
+   modFile   : /home/essekwtz/public_html/vqmod/xml/fix_search_for_product_tag.xml
+   id        : FIX_Search_for_product_tag
+   version   : 1.5.5.1
+   vqmver    : 2.3.0
+   author    : maier
+SEARCH NOT FOUND (ABORTING MOD): if (isset($this->request->get['search']) || isset($this->request->get['filter_tag'])) {
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-05-06 15:44:37 ~ IP : 121.54.41.122 ----------
+REQUEST URI : /index.php?route=product/search&amp;filter_name=adenna%20gloves
+MOD DETAILS:
+   modFile   : /home/essekwtz/public_html/vqmod/xml/fix_search_for_product_tag.xml
+   id        : FIX_Search_for_product_tag
+   version   : 1.5.5.1
+   vqmver    : 2.3.0
+   author    : maier
+SEARCH NOT FOUND (ABORTING MOD): if (isset($this->request->get['search']) || isset($this->request->get['filter_tag'])) {
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-05-06 16:14:32 ~ IP : 121.54.41.122 ----------
+REQUEST URI : /index.php?route=product/search&amp;filter_name=adenna%20glove
+MOD DETAILS:
+   modFile   : /home/essekwtz/public_html/vqmod/xml/fix_search_for_product_tag.xml
+   id        : FIX_Search_for_product_tag
+   version   : 1.5.5.1
+   vqmver    : 2.3.0
+   author    : maier
+SEARCH NOT FOUND (ABORTING MOD): if (isset($this->request->get['search']) || isset($this->request->get['filter_tag'])) {
+
+----------------------------------------------------------------------
+
+

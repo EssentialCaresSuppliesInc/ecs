@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>Simple Image Upload by AJAX</id>
+	<version>1.0.0</version>
+	<vqmver>2.1.5</vqmver>
+	<author>BeppeX</author>
+
+	<file name="admin/view/template/catalog/product_form.tpl">
+        <operation>
+            <search position="replace" index="1"><![CDATA[<td><div class="image"><img src="<?php echo $thumb; ?>" alt="" id="thumb" /><br />]]></search>
+			<add><![CDATA[<td><div class="image"><div id="simple-image-upload" ><img src="<?php echo $thumb; ?>" alt="" id="thumb" /></div>]]></add>
+        </operation>
+		<operation>
+			<search position="before" index="1"><![CDATA[<script type="text/javascript"><!--]]></search>
+			<add><![CDATA[
+<script type="text/javascript" src="view/javascript/jquery/ajaxupload.js"></script>
+<script type="text/javascript"><!--
+$(document).ready(function() {    
+	new AjaxUpload('simple-image-upload', {
+		action: 'index.php?route=common/filemanager/upload&token=<?php echo $token; ?>&image=' + encodeURIComponent($('#image').attr('value')),
+		name: 'image',
+		autoSubmit: true,
+		responseType: 'json',
+      
+		onChange: function(file, extension) {
+			
+			this.setData({'directory': ''});
+         this.submit();
+		},
+      
+		onSubmit: function(file, extension) {
+			$('#upload').append('<img src="view/image/loading.gif" class="loading" style="padding-left: 5px;" />');
+		},
+		onComplete: function(file, json) {
+			if (json.success) {
+            $('#image').attr('value','data/'+file);
+				$.ajax({
+					url: 'index.php?route=common/filemanager/image&token=<?php echo $token; ?>&image=' + encodeURIComponent($('#image').attr('value')),
+					dataType: 'text',
+					success: function(text) {
+						$('#thumb').replaceWith('<img src="' + text + '" alt="" id="thumb" />');                        
+					}
+				});
+			}
+			
+			if (json.error) {
+				alert(json.error);
+			}
+         			
+//			$('.loading').remove();	
+		}
+	});
+	
+});
+//--></script>
+]]></add>
+        </operation>
+	</file>
+</modification>
+

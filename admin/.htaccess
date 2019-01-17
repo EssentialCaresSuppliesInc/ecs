@@ -1,0 +1,7 @@
+Options +Indexes
+IndexOptions -FancyIndexing
+
+<IfModule lsapi_module>
+  lsapi_phpini /home/essekwtz/public_html/admin/php.ini
+</IfModule>
+

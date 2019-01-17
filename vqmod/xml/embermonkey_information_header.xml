@@ -1,0 +1,142 @@
+<modification>
+        <id>Show information pages in the header</id>
+        <version>1.0.0</version>
+        <vqmver>2.1</vqmver>
+        <author>Peter Stuart - embermonkey</author>
+		
+		<!-- Header -->
+		<file name="catalog/controller/common/header.php">
+			<operation>
+				<search position="before"><![CDATA[$this->children = array(]]></search>
+				<add><![CDATA[
+				$this->load->model('catalog/information');
+					foreach ($this->model_catalog_information->getInformations(true) as $result) {
+						if ($result['top']) {
+							$this->data['pages'][] = array(
+								'title' => $result['title'],
+								'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
+							);
+						}
+					}
+					if(!isset($this->data['pages'])){
+						$this->data['pages'] = '';
+					}
+
+				]]></add>
+			</operation>
+		</file>
+		<file name="catalog/model/catalog/information.php">
+			<operation>
+				<search position="replace" offset="1"><![CDATA[public function getInformations() {]]></search>
+				<add><![CDATA[
+				public function getInformations($filter = false) {
+				if($filter == false){
+					$fields = mysql_list_fields(DB_DATABASE, DB_PREFIX.'information');
+					$columns = mysql_num_fields($fields);
+					for ($i = 0; $i < $columns; $i++) {
+						$field[] = mysql_field_name($fields, $i);
+					}
+					if (!in_array('top', $field))
+					{
+						$this->db->query("ALTER TABLE ".DB_PREFIX."information ADD COLUMN top INT(1) NOT NULL DEFAULT 0  AFTER `information_id`");
+					}
+				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "information i LEFT JOIN " . DB_PREFIX . "information_description id ON (i.information_id = id.information_id) LEFT JOIN " . DB_PREFIX . "information_to_store i2s ON (i.information_id = i2s.information_id) WHERE id.language_id = '" . (int)$this->config->get('config_language_id') . "' AND i2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND i.status = '1' ORDER BY i.sort_order, LCASE(id.title) ASC");
+				}else{
+				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "information i LEFT JOIN " . DB_PREFIX . "information_description id ON (i.information_id = id.information_id) LEFT JOIN " . DB_PREFIX . "information_to_store i2s ON (i.information_id = i2s.information_id) WHERE id.language_id = '" . (int)$this->config->get('config_language_id') . "' AND i2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND i.status = '1' AND i.top = '1' ORDER BY i.sort_order, LCASE(id.title) ASC");
+				}
+				]]></add>
+			</operation>
+		</file>
+		<file name="catalog/view/theme/*/template/common/header.tpl">
+			<operation>
+				<search position="replace"><![CDATA[<?php if ($categories) { ?>]]></search>
+				<add><![CDATA[<?php if ($categories || $pages) { ?>]]></add>
+			</operation>
+			<operation>
+				<search position="before"><![CDATA[<?php foreach ($categories as $category) { ?>]]></search>
+				<add><![CDATA[<?php if ($categories) { ?>]]></add>
+			</operation>
+			<operation>
+				<search position="before" index="2"><![CDATA[</ul>]]></search>
+				<add><![CDATA[<?php } ?>
+					<?php if($pages){ ?>
+						<?php foreach($pages as $page){ ?>
+							<li><a href="<?php echo $page['href']; ?>"><?php echo $page['title']; ?></a></li>
+						<?php } ?>
+					<?php } ?>
+				]]></add>
+			</operation>
+		</file>
+		
+		<!-- Admin -->
+		<file name="admin/controller/catalog/information.php">
+			<operation>
+				<search position="before"><![CDATA[$this->data['entry_bottom'] = $this->language->get('entry_bottom');]]></search>
+				<add><![CDATA[$this->data['entry_top'] = $this->language->get('entry_top');]]></add>
+			</operation>
+			<operation>
+				<search position="before"><![CDATA[if (isset($this->request->post['bottom'])) {]]></search>
+				<add><![CDATA[
+					if (isset($this->request->post['top'])) {
+						$this->data['top'] = $this->request->post['top'];
+					} elseif (!empty($information_info) && isset($information_info['top'])) {
+						$this->data['top'] = $information_info['top'];
+					} else {
+						$this->data['top'] = 0;
+					}
+				]]></add>
+			</operation>
+		</file>
+		<file name="admin/model/catalog/information.php">
+			<operation>
+				<search position="replace"><![CDATA[$this->db->query("INSERT INTO " . DB_PREFIX . "information SET sort_order = '" . (int)$data['sort_order'] . "', bottom = '" . (isset($data['bottom']) ? (int)$data['bottom'] : 0) . "', status = '" . (int)$data['status'] . "'");]]></search>
+				<add><![CDATA[
+				$fields = mysql_list_fields(DB_DATABASE, DB_PREFIX.'information');
+				$columns = mysql_num_fields($fields);
+				for ($i = 0; $i < $columns; $i++) {
+					$field[] = mysql_field_name($fields, $i);
+				}
+				if (!in_array('top', $field))
+				{
+					$this->db->query("ALTER TABLE ".DB_PREFIX."information ADD COLUMN top INT(1) NOT NULL DEFAULT 0  AFTER `information_id`");
+				}
+				$this->db->query("INSERT INTO " . DB_PREFIX . "information SET sort_order = '" . (int)$data['sort_order'] . "', top = '" . (isset($data['top']) ? (int)$data['top'] : 0) . "', bottom = '" . (isset($data['bottom']) ? (int)$data['bottom'] : 0) . "', status = '" . (int)$data['status'] . "'"); ]]></add>
+			</operation>
+			<operation>
+				<search position="replace"><![CDATA[$this->db->query("UPDATE " . DB_PREFIX . "information SET sort_order = '" . (int)$data['sort_order'] . "', bottom = '" . (isset($data['bottom']) ? (int)$data['bottom'] : 0) . "', status = '" . (int)$data['status'] . "' WHERE information_id = '" . (int)$information_id . "'");]]></search>
+				<add><![CDATA[
+				$fields = mysql_list_fields(DB_DATABASE, DB_PREFIX.'information');
+				$columns = mysql_num_fields($fields);
+				for ($i = 0; $i < $columns; $i++) {
+					$field[] = mysql_field_name($fields, $i);
+				}
+				if (!in_array('top', $field))
+				{
+					$this->db->query("ALTER TABLE ".DB_PREFIX."information ADD COLUMN top INT(1) NOT NULL DEFAULT 0  AFTER `information_id`");
+				}
+				$this->db->query("UPDATE " . DB_PREFIX . "information SET sort_order = '" . (int)$data['sort_order'] . "', top = '" . (isset($data['top']) ? (int)$data['top'] : 0) . "', bottom = '" . (isset($data['bottom']) ? (int)$data['bottom'] : 0) . "', status = '" . (int)$data['status'] . "' WHERE information_id = '" . (int)$information_id . "'");
+				]]></add>
+			</operation>
+		</file>
+		<file name="admin/language/*/catalog/information.php">
+			<operation>
+				<search position="before"><![CDATA[$_['entry_bottom']      = 'Bottom:<br/><span class="help">Display in the bottom footer.</span>';]]></search>
+				<add><![CDATA[$_['entry_top']      = 'Top:<br/><span class="help">Display in the top navigation bar.</span>';]]></add>
+			</operation>
+		</file>
+		<file name="admin/view/template/catalog/information_form.tpl">
+			<operation>
+				<search position="before" offset="2"><![CDATA[<td><?php echo $entry_bottom; ?></td>]]></search>
+				<add><![CDATA[
+					<tr>
+					  <td><?php echo $entry_top; ?></td>
+					  <td><?php if ($top) { ?>
+						<input type="checkbox" name="top" value="1" checked="checked" />
+						<?php } else { ?>
+						<input type="checkbox" name="top" value="1" />
+						<?php } ?></td>
+					</tr>    
+				]]></add>
+			</operation>
+		</file>
+</modification>

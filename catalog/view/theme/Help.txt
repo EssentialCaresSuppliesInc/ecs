@@ -1,0 +1,174 @@
+Gimboo Cart Template Documentation By Jimmy James
+
+First of all thank-you very much for purchasing my template. 
+If you have any questions at all no matter how small, please feel free to contact me
+via my user page contact form
+
+       Once again Thank-you Jimmy James
+
+
+//TABLE OF CONTENTS//
+
+   1, Theme Instalation
+   2, Customizing the Files including Navigation bar
+
+
+Instalation
+
+Download Opencart fist at http://www.opencart.com/index.php?route=download/download
+
+This template works with the version v1.4.8+
+
+After you have installed Opencart, copy gimboocart template. This is the file named 
+(Gimboo) which can be found in (template-upload-Version 1.4.8+) then upload it to--
+
+(rootfolder) -- catalog -- view -- theme "upload gimboo file here, after that is done 
+you will need to upload the screenshot which is found in (screenshot-upload) folder
+named (gimboo-cart.jpg) to (rootfolder) -- image -- template
+
+Next login to your adin section, after you haved logged in click on admin -- configuration
+-- settings, now click on (shop menu tab) select GIMBOO template and click save.
+
+
+Adding the logo -- click on (image tab -- clcik to the right of Store Logo -- click upload 
+-- find logo -- double click on logo when uploaded then save
+
+Adding Banner -- click on (systems -- settings -- image -- upload banner from there--
+click store tab -- scroll to the bottom -- click image button -- browse server --
+double click banner image -- then save
+
+To add more products and find further help please check out
+http://www.opencart.com/index.php?route=documentation/documentation
+
+
+(1) The Html Structure -- Template Folder
+(2) THe CSS Files -- Stylesheet Folder
+(3) The Images Folder
+(4) The Navagation bar -- Template Folder -- nav folder
+(5) Nivo slider ( Homepage gallery)
+
+============================================================================================
+
+(1) The HTML Structure
+
+The theme has a layout that is fixed with 3 Columns (all found in stylesheet.css)
+
+#column_left   (Left Column)
+
+#column_right  (Right Column)
+
+#content       (Center Column)
+
+---------------------------------------------------------------------------------------------
+
+#container  (all the way down to)  #header .div10   ( Is the header)
+
+---------------------------------------------------------------------------------------------
+
+#footer   (the footer) to change the text on the footer goto template -- common -- footer.tpl
+
+---------------------------------------------------------------------------------------------
+
+(2) The CSS fILE
+
+Only one CSS FiLE has been used -- gimboo - stylesheet - stylesheet.css
+
+If you want the edit a certain section of the site, find the label in the css file and scroll
+down unill you find the style that needs to be edited
+
+TIP -- Open your shopping cart in Google Chrome or Firefox, navigate to the part that you want 
+editing (exactly navigate with cursor) then right click on mouse and scroll down and click inspect
+element, there you will find all the information that you need to find the right style, image etc
+and the location that it may be found in
+
+---------------------------------------------------------------------------------------------
+
+(3) The Image File
+
+All images for your template can be found in the image file
+
+----------------------------------------------------------------------------------------------
+
+(4) The Navagation bar - Template -- nav 
+
+images and CSS files can be found in the above.
+To modify the navigation bar text goto - template - common -
+header.tpl. There scroll down to <!-- Menu Starts  --> under there you will see the appropriate text
+to edit ie: Acoount, Checkout etc
+
+----------------------------------------------------------------------------------------------
+
+(5) The homepage gallery files are all located in gimboo/template/theme/common/home.tpl
+
+Home.tpl is the only file hat you need to modify 
+
+scroll down and you will see the code below
+
+	 <img src="slide1.jpg" alt="" title="This is an example of a caption"/>
+	 <img src="slide2.jpg" alt="" title="This is an example of a caption">
+	  <img src="slide3.jpg" alt="" title="This is an example of a caption" />
+	  <img src="slide4.jpg" alt=""title="This is an example of a caption" />
+
+There you will see the image names ie: slide1.jpg etc etc
+
+To add another image just paste this <img src="slide5.jpg" alt="" /> directly underneath the <img src="slide4.jpg" alt="" />
+
+You can see all that I have change is the name of the image to slide5.jpg
+
+So now you will have 5 slides so just repeat this or delete them depending on what you need (easy)
+
+Ok now you need to add the image to your site 
+	
+	
+Ok first place your new image on your desktop and name it slide5.jpg if the extension is png, gif etc make sure you change this here <img src="slide5.png" >
+	
+You will now have to add the new image to gimboo/nivoslider (all images for the gallery go in here) IMPORTANT!
+	
+Next if you want a caption underneath the image locate this code again
+
+	 <img src="slide1.jpg" alt="" title="This is an example of a caption"/>
+	 <img src="slide2.jpg" alt="" title="This is an example of a caption">
+	  <img src="slide3.jpg" alt="" title="This is an example of a caption" />
+	  <img src="slide4.jpg" alt=""title="This is an example of a caption" />
+
+	And change This is an example of a caption to whatever you want or just delete if you don’t want a caption
+
+
+Next you may change the speed that the image changes with this code
+
+
+effect:'random', //Specify sets like: 'fold,fade,sliceDown'
+        slices:20,
+        animSpeed:1000, //Slide transition speed
+        pauseTime:1000,
+        startSlide:0, //Set starting Slide (0 index)
+        directionNav:true, //Next & Prev
+        directionNavHide:true, //Only show on hover
+        controlNav:true, //1,2,3...
+        controlNavThumbs:false, //Use thumbnails for Control Nav
+        controlNavThumbsFromRel:false, //Use image rel for thumbs
+        controlNavThumbsSearch: '.jpg', //Replace this with...
+        controlNavThumbsReplace: 'bullets.png', //...this in thumb Image src
+        keyboardNav:true, //Use left & right arrows
+        pauseOnHover:true, //Stop animation while hovering
+        manualAdvance:false, //Force manual transitions
+        captionOpacity:0.8, //Universal caption opacity
+        beforeChange: function(){},
+        afterChange: function(){},
+        slideshowEnd: function(){}, //Triggers after all slides have been shown
+        lastSlide: function(){}, //Triggers when last slide is shown
+        afterLoad: function(){} //Triggers when slider has loaded
+
+
+Its quite simple, also more wxplanations can be found at http://nivo.dev7studios.com/#usage
+
+Ps make sure your images are 960px wide & 275px height
+
+----------------------------------------------------------------------------------------------
+
+
+And let me thank-you again for the purchase of my template 
+
+Warm Regards Jimmy James
+
+For more information please conatct us at admin@gimboo.co.uk

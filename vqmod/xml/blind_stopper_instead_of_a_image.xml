@@ -1,0 +1,156 @@
+<modification>
+
+	<id>Add no_image.jpg if have not image</id>
+	<version>1.0.0</version>
+	<vqmver>2.1.5</vqmver>
+	<author>Fabrikator</author>
+	
+	<file name="catalog/controller/product/product.php">
+		<operation>
+			<search position="replace"><![CDATA[
+			$this->data['popup'] = '';
+			]]></search>
+			<add><![CDATA[
+			$this->data['popup'] = $this->model_tool_image->resize('no_image.jpg', $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height'));
+			]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[
+			$this->data['thumb'] = '';
+			]]></search>
+			<add><![CDATA[
+			$this->data['thumb'] = $this->model_tool_image->resize('no_image.jpg', $this->config->get('config_image_thumb_width'), $this->config->get('config_image_thumb_height'));
+			]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[
+			$image = false;
+			]]></search>
+			<add><![CDATA[
+			$image = $this->model_tool_image->resize('no_image.jpg', $this->config->get('config_image_related_width'), $this->config->get('config_image_related_height'));
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/controller/product/compare.php">
+		<operation>
+			<search position="replace"><![CDATA[
+			$image = false;
+			]]></search>
+			<add><![CDATA[
+			$image = $this->model_tool_image->resize('no_image.jpg', $this->config->get('config_image_compare_width'), $this->config->get('config_image_compare_height'));
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/product/special.php">
+		<operation>
+			<search position="replace"><![CDATA[
+			$image = false;
+			]]></search>
+			<add><![CDATA[
+			$image = $this->model_tool_image->resize('no_image.jpg', $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/product/category.php">
+		<operation>
+			<search position="replace"><![CDATA[
+			$image = false;
+			]]></search>
+			<add><![CDATA[
+			$image = $this->model_tool_image->resize('no_image.jpg', $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+			]]></add>
+		</operation>
+	</file>
+		
+	<file name="catalog/controller/product/search.php">
+		<operation>
+			<search position="replace"><![CDATA[
+			$image = false;
+			]]></search>
+			<add><![CDATA[
+			$image = $this->model_tool_image->resize('no_image.jpg', $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/product/manufacturer.php">
+		<operation>
+			<search position="replace"><![CDATA[
+			$image = false;
+			]]></search>
+			<add><![CDATA[
+			$image = $this->model_tool_image->resize('no_image.jpg', $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/account/wishlist.php">
+		<operation>
+			<search position="replace"><![CDATA[
+			$image = false;
+			]]></search>
+			<add><![CDATA[
+			$image = $this->model_tool_image->resize('no_image.jpg', $this->config->get('config_image_wishlist_width'), $this->config->get('config_image_wishlist_height'));
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/module/bestseller.php">
+		<operation>
+			<search position="replace"><![CDATA[
+			$image = false;
+			]]></search>
+			<add><![CDATA[
+			$image = $this->model_tool_image->resize('no_image.jpg', $setting['image_width'], $setting['image_height']);
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/module/cart.php">
+		<operation>
+			<search position="replace"><![CDATA[
+			$image = '';
+			]]></search>
+			<add><![CDATA[
+			$image = $this->model_tool_image->resize('no_image.jpg', $this->config->get('config_image_cart_width'), $this->config->get('config_image_cart_height'));
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/module/featured.php">
+		<operation>
+			<search position="replace"><![CDATA[
+			$image = false;
+			]]></search>
+			<add><![CDATA[
+			$image = $this->model_tool_image->resize('no_image.jpg', $setting['image_width'], $setting['image_height']);
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/module/latest.php">
+		<operation>
+			<search position="replace"><![CDATA[
+			$image = false;
+			]]></search>
+			<add><![CDATA[
+			$image = $this->model_tool_image->resize('no_image.jpg', $setting['image_width'], $setting['image_height']);
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/module/special.php">
+		<operation>
+			<search position="replace"><![CDATA[
+			$image = false;
+			]]></search>
+			<add><![CDATA[
+			$image = $this->model_tool_image->resize('no_image.jpg', $setting['image_width'], $setting['image_height']);
+			]]></add>
+		</operation>
+	</file>
+	
+</modification>	
