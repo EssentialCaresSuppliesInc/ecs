@@ -2,6 +2,7 @@
 class ModelLocalisationCountry extends Model {
 	public function addCountry($data) {
 		$this->db->query("INSERT INTO " . DB_PREFIX . "country SET name = '" . $this->db->escape($data['name']) . "', iso_code_2 = '" . $this->db->escape($data['iso_code_2']) . "', iso_code_3 = '" . $this->db->escape($data['iso_code_3']) . "', address_format = '" . $this->db->escape($data['address_format']) . "', postcode_required = '" . (int)$data['postcode_required'] . "', status = '" . (int)$data['status'] . "'");
+<<<<<<< HEAD
 
 		$this->cache->delete('country');
 		
@@ -30,10 +31,39 @@ class ModelLocalisationCountry extends Model {
 		if ($data) {
 			$sql = "SELECT * FROM " . DB_PREFIX . "country";
 
+=======
+	
+		$this->cache->delete('country');
+	}
+	
+	public function editCountry($country_id, $data) {
+		$this->db->query("UPDATE " . DB_PREFIX . "country SET name = '" . $this->db->escape($data['name']) . "', iso_code_2 = '" . $this->db->escape($data['iso_code_2']) . "', iso_code_3 = '" . $this->db->escape($data['iso_code_3']) . "', address_format = '" . $this->db->escape($data['address_format']) . "', postcode_required = '" . (int)$data['postcode_required'] . "', status = '" . (int)$data['status'] . "' WHERE country_id = '" . (int)$country_id . "'");
+	
+		$this->cache->delete('country');
+	}
+	
+	public function deleteCountry($country_id) {
+		$this->db->query("DELETE FROM " . DB_PREFIX . "country WHERE country_id = '" . (int)$country_id . "'");
+		
+		$this->cache->delete('country');
+	}
+	
+	public function getCountry($country_id) {
+		$query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "country WHERE country_id = '" . (int)$country_id . "'");
+		
+		return $query->row;
+	}
+		
+	public function getCountries($data = array()) {
+		if ($data) {
+			$sql = "SELECT * FROM " . DB_PREFIX . "country";
+			
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 			$sort_data = array(
 				'name',
 				'iso_code_2',
 				'iso_code_3'
+<<<<<<< HEAD
 			);
 
 			if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
@@ -42,11 +72,22 @@ class ModelLocalisationCountry extends Model {
 				$sql .= " ORDER BY name";
 			}
 
+=======
+			);	
+			
+			if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
+				$sql .= " ORDER BY " . $data['sort'];	
+			} else {
+				$sql .= " ORDER BY name";	
+			}
+			
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 			if (isset($data['order']) && ($data['order'] == 'DESC')) {
 				$sql .= " DESC";
 			} else {
 				$sql .= " ASC";
 			}
+<<<<<<< HEAD
 
 			if (isset($data['start']) || isset($data['limit'])) {
 				if ($data['start'] < 0) {
@@ -60,10 +101,26 @@ class ModelLocalisationCountry extends Model {
 				$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
 			}
 
+=======
+			
+			if (isset($data['start']) || isset($data['limit'])) {
+				if ($data['start'] < 0) {
+					$data['start'] = 0;
+				}					
+
+				if ($data['limit'] < 1) {
+					$data['limit'] = 20;
+				}	
+			
+				$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+			}		
+			
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 			$query = $this->db->query($sql);
 
 			return $query->rows;
 		} else {
+<<<<<<< HEAD
 			$country_data = $this->cache->get('country.admin');
 
 			if (!$country_data) {
@@ -84,3 +141,26 @@ class ModelLocalisationCountry extends Model {
 		return $query->row['total'];
 	}
 }
+=======
+			$country_data = $this->cache->get('country');
+		
+			if (!$country_data) {
+				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "country ORDER BY name ASC");
+	
+				$country_data = $query->rows;
+			
+				$this->cache->set('country', $country_data);
+			}
+
+			return $country_data;			
+		}	
+	}
+	
+	public function getTotalCountries() {
+      	$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "country");
+		
+		return $query->row['total'];
+	}	
+}
+?>
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19

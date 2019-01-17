@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <modification>
 	<id>VQMOD CORE FOR OPENCART - DO NOT REMOVE</id>
 	<version>1.4.x and 1.5.x</version>
@@ -75,6 +76,19 @@
 		<operation>
 			<search position="before"><![CDATA[file_exists($file)]]></search>
 			<add><![CDATA[global $vqmod; $file = $vqmod->modCheck($file);]]></add>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>VQMOD CORE FOR OPENCART - DO NOT REMOVE</id>
+	<version>1.4.x and 1.5.x</version>
+	<vqmver required="true">2.4.0</vqmver>
+	<author>vqmod.com</author>
+	
+	<file path="system/" name="startup.php,engine/*.php,library/*.php">
+		<operation error="skip">
+			<search position="replace" regex="true"><![CDATA[~(require|include)(_once)?\(([^)]+)~]]></search>
+			<add><![CDATA[$1$2(VQMod::modCheck($3)]]></add>
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		</operation>
 	</file>
 

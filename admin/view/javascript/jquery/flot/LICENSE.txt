@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Copyright (c) 2007-2013 IOLA and Ole Laursen
+=======
+Copyright (c) 2007-2009 IOLA and Ole Laursen
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

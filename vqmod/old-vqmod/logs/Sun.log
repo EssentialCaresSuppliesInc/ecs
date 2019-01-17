@@ -1,0 +1,88 @@
+---------- Date: 2013-04-21 04:42:23 ~ IP : 115.146.234.154 ----------
+REQUEST URI : /index.php?route=common/home
+MOD DETAILS:
+   modFile   : /home/essekwtz/public_html/vqmod/xml/z-change-add-to-cart.xml
+   id        : Change Add to Cart
+   version   : 1
+   vqmver    : 2.16
+   author    : thbr02
+Could not resolve path for [catalog/language/swedish/account/wishlist.php] (SKIPPED)
+SEARCH NOT FOUND (ABORTING MOD): <a onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button"><span><?php echo $button_cart; ?></span></a>
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-04-21 04:42:25 ~ IP : 115.146.234.154 ----------
+REQUEST URI : /index.php?route=account/login
+MOD DETAILS:
+   modFile   : /home/essekwtz/public_html/vqmod/xml/z-change-add-to-cart.xml
+   id        : Change Add to Cart
+   version   : 1
+   vqmver    : 2.16
+   author    : thbr02
+Could not resolve path for [catalog/language/swedish/account/wishlist.php] (SKIPPED)
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-04-21 04:42:27 ~ IP : 115.146.234.154 ----------
+REQUEST URI : /index.php?route=common/home
+MOD DETAILS:
+   modFile   : /home/essekwtz/public_html/vqmod/xml/z-change-add-to-cart.xml
+   id        : Change Add to Cart
+   version   : 1
+   vqmver    : 2.16
+   author    : thbr02
+Could not resolve path for [catalog/language/swedish/account/wishlist.php] (SKIPPED)
+SEARCH NOT FOUND (ABORTING MOD): <a onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button"><span><?php echo $button_cart; ?></span></a>
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-04-21 04:42:29 ~ IP : 115.146.234.154 ----------
+REQUEST URI : /index.php?route=account/login
+MOD DETAILS:
+   modFile   : /home/essekwtz/public_html/vqmod/xml/z-change-add-to-cart.xml
+   id        : Change Add to Cart
+   version   : 1
+   vqmver    : 2.16
+   author    : thbr02
+Could not resolve path for [catalog/language/swedish/account/wishlist.php] (SKIPPED)
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-04-21 04:42:34 ~ IP : 115.146.234.154 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : /home/essekwtz/public_html/vqmod/xml/z-change-add-to-cart.xml
+   id        : Change Add to Cart
+   version   : 1
+   vqmver    : 2.16
+   author    : thbr02
+Could not resolve path for [catalog/language/swedish/account/wishlist.php] (SKIPPED)
+SEARCH NOT FOUND (ABORTING MOD): <a onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button"><span><?php echo $button_cart; ?></span></a>
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-04-21 04:42:36 ~ IP : 115.146.234.154 ----------
+REQUEST URI : /index.php?route=account/login
+MOD DETAILS:
+   modFile   : /home/essekwtz/public_html/vqmod/xml/z-change-add-to-cart.xml
+   id        : Change Add to Cart
+   version   : 1
+   vqmver    : 2.16
+   author    : thbr02
+Could not resolve path for [catalog/language/swedish/account/wishlist.php] (SKIPPED)
+----------------------------------------------------------------------
+
+
+---------- Date: 2013-04-21 05:10:54 ~ IP : 69.30.242.234 ----------
+REQUEST URI : /index.php?route=product/search&amp;filter_tag=glove&amp;page=1
+MOD DETAILS:
+   modFile   : /home/essekwtz/public_html/vqmod/xml/fix_search_for_product_tag.xml
+   id        : FIX_Search_for_product_tag
+   version   : 1.5.5.1
+   vqmver    : 2.3.0
+   author    : maier
+SEARCH NOT FOUND (ABORTING MOD): if (isset($this->request->get['search']) || isset($this->request->get['filter_tag'])) {
+
+----------------------------------------------------------------------
+
+

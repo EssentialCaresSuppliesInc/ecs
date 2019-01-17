@@ -1,5 +1,6 @@
 <?php
 class Log {
+<<<<<<< HEAD
 	private $handle;
 
 	public function __construct($filename) {
@@ -14,3 +15,22 @@ class Log {
 		fclose($this->handle);
 	}
 }
+=======
+	private $filename;
+	
+	public function __construct($filename) {
+		$this->filename = $filename;
+	}
+	
+	public function write($message) {
+		$file = DIR_LOGS . $this->filename;
+		
+		$handle = fopen($file, 'a+'); 
+		
+		fwrite($handle, date('Y-m-d G:i:s') . ' - ' . $message . "\n");
+			
+		fclose($handle); 
+	}
+}
+?>
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19

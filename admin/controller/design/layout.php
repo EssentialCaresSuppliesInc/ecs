@@ -1,13 +1,21 @@
+<<<<<<< HEAD
 <?php
 class ControllerDesignLayout extends Controller {
 	private $error = array();
 
+=======
+<?php 
+class ControllerDesignLayout extends Controller {
+	private $error = array();
+ 
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 	public function index() {
 		$this->load->language('design/layout');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 		
 		$this->load->model('design/layout');
+<<<<<<< HEAD
 
 		$this->getList();
 	}
@@ -26,6 +34,26 @@ class ControllerDesignLayout extends Controller {
 
 			$url = '';
 
+=======
+		
+		$this->getList();
+	}
+
+	public function insert() {
+		$this->load->language('design/layout');
+
+		$this->document->setTitle($this->language->get('heading_title'));
+		
+		$this->load->model('design/layout');
+		
+		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
+			$this->model_design_layout->addLayout($this->request->post);
+			
+			$this->session->data['success'] = $this->language->get('text_success');
+
+			$url = '';
+			
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 			if (isset($this->request->get['sort'])) {
 				$url .= '&sort=' . $this->request->get['sort'];
 			}
@@ -37,13 +65,19 @@ class ControllerDesignLayout extends Controller {
 			if (isset($this->request->get['page'])) {
 				$url .= '&page=' . $this->request->get['page'];
 			}
+<<<<<<< HEAD
 
 			$this->response->redirect($this->url->link('design/layout', 'token=' . $this->session->data['token'] . $url, true));
+=======
+			
+			$this->redirect($this->url->link('design/layout', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		}
 
 		$this->getForm();
 	}
 
+<<<<<<< HEAD
 	public function edit() {
 		$this->load->language('design/layout');
 
@@ -51,13 +85,26 @@ class ControllerDesignLayout extends Controller {
 
 		$this->load->model('design/layout');
 
+=======
+	public function update() {
+		$this->load->language('design/layout');
+
+		$this->document->setTitle($this->language->get('heading_title'));
+		
+		$this->load->model('design/layout');
+		
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_design_layout->editLayout($this->request->get['layout_id'], $this->request->post);
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
 			$url = '';
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 			if (isset($this->request->get['sort'])) {
 				$url .= '&sort=' . $this->request->get['sort'];
 			}
@@ -69,12 +116,18 @@ class ControllerDesignLayout extends Controller {
 			if (isset($this->request->get['page'])) {
 				$url .= '&page=' . $this->request->get['page'];
 			}
+<<<<<<< HEAD
 
 			$this->response->redirect($this->url->link('design/layout', 'token=' . $this->session->data['token'] . $url, true));
+=======
+					
+			$this->redirect($this->url->link('design/layout', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		}
 
 		$this->getForm();
 	}
+<<<<<<< HEAD
 
 	public function delete() {
 		$this->load->language('design/layout');
@@ -83,15 +136,33 @@ class ControllerDesignLayout extends Controller {
 
 		$this->load->model('design/layout');
 
+=======
+ 
+	public function delete() {
+		$this->load->language('design/layout');
+ 
+		$this->document->setTitle($this->language->get('heading_title'));
+		
+		$this->load->model('design/layout');
+		
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		if (isset($this->request->post['selected']) && $this->validateDelete()) {
 			foreach ($this->request->post['selected'] as $layout_id) {
 				$this->model_design_layout->deleteLayout($layout_id);
 			}
+<<<<<<< HEAD
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
 			$url = '';
 
+=======
+			
+			$this->session->data['success'] = $this->language->get('text_success');
+
+			$url = '';
+			
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 			if (isset($this->request->get['sort'])) {
 				$url .= '&sort=' . $this->request->get['sort'];
 			}
@@ -104,33 +175,55 @@ class ControllerDesignLayout extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
+<<<<<<< HEAD
 			$this->response->redirect($this->url->link('design/layout', 'token=' . $this->session->data['token'] . $url, true));
+=======
+			$this->redirect($this->url->link('design/layout', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		}
 
 		$this->getList();
 	}
 
+<<<<<<< HEAD
 	protected function getList() {
+=======
+	private function getList() {
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
 			$sort = 'name';
 		}
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		if (isset($this->request->get['order'])) {
 			$order = $this->request->get['order'];
 		} else {
 			$order = 'ASC';
 		}
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		if (isset($this->request->get['page'])) {
 			$page = $this->request->get['page'];
 		} else {
 			$page = 1;
 		}
+<<<<<<< HEAD
 
 		$url = '';
 
+=======
+			
+		$url = '';
+			
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		if (isset($this->request->get['sort'])) {
 			$url .= '&sort=' . $this->request->get['sort'];
 		}
@@ -138,11 +231,16 @@ class ControllerDesignLayout extends Controller {
 		if (isset($this->request->get['order'])) {
 			$url .= '&order=' . $this->request->get['order'];
 		}
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		if (isset($this->request->get['page'])) {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
+<<<<<<< HEAD
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
@@ -210,6 +308,76 @@ class ControllerDesignLayout extends Controller {
 			$data['selected'] = (array)$this->request->post['selected'];
 		} else {
 			$data['selected'] = array();
+=======
+  		$this->data['breadcrumbs'] = array();
+
+   		$this->data['breadcrumbs'][] = array(
+       		'text'      => $this->language->get('text_home'),
+			'href'      => $this->url->link('common/home', 'token=' . $this->session->data['token'], 'SSL'),
+      		'separator' => false
+   		);
+
+   		$this->data['breadcrumbs'][] = array(
+       		'text'      => $this->language->get('heading_title'),
+			'href'      => $this->url->link('design/layout', 'token=' . $this->session->data['token'] . $url, 'SSL'),
+      		'separator' => ' :: '
+   		);
+		
+		$this->data['insert'] = $this->url->link('design/layout/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$this->data['delete'] = $this->url->link('design/layout/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		 
+		$this->data['layouts'] = array();
+
+		$data = array(
+			'sort'  => $sort,
+			'order' => $order,
+			'start' => ($page - 1) * $this->config->get('config_admin_limit'),
+			'limit' => $this->config->get('config_admin_limit')
+		);
+		
+		$layout_total = $this->model_design_layout->getTotalLayouts();
+		
+		$results = $this->model_design_layout->getLayouts($data);
+		
+		foreach ($results as $result) {
+			$action = array();
+			
+			$action[] = array(
+				'text' => $this->language->get('text_edit'),
+				'href' => $this->url->link('design/layout/update', 'token=' . $this->session->data['token'] . '&layout_id=' . $result['layout_id'] . $url, 'SSL')
+			);
+
+			$this->data['layouts'][] = array(
+				'layout_id' => $result['layout_id'],
+				'name'      => $result['name'],
+				'selected'  => isset($this->request->post['selected']) && in_array($result['layout_id'], $this->request->post['selected']),				
+				'action'    => $action
+			);
+		}
+
+		$this->data['heading_title'] = $this->language->get('heading_title');
+		
+		$this->data['text_no_results'] = $this->language->get('text_no_results');
+		
+		$this->data['column_name'] = $this->language->get('column_name');
+		$this->data['column_action'] = $this->language->get('column_action');	
+
+		$this->data['button_insert'] = $this->language->get('button_insert');
+		$this->data['button_delete'] = $this->language->get('button_delete');
+ 
+ 		if (isset($this->error['warning'])) {
+			$this->data['error_warning'] = $this->error['warning'];
+		} else {
+			$this->data['error_warning'] = '';
+		}
+		
+		if (isset($this->session->data['success'])) {
+			$this->data['success'] = $this->session->data['success'];
+		
+			unset($this->session->data['success']);
+		} else {
+			$this->data['success'] = '';
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		}
 
 		$url = '';
@@ -223,15 +391,25 @@ class ControllerDesignLayout extends Controller {
 		if (isset($this->request->get['page'])) {
 			$url .= '&page=' . $this->request->get['page'];
 		}
+<<<<<<< HEAD
 
 		$data['sort_name'] = $this->url->link('design/layout', 'token=' . $this->session->data['token'] . '&sort=name' . $url, true);
 
+=======
+		
+		$this->data['sort_name'] = $this->url->link('design/layout', 'token=' . $this->session->data['token'] . '&sort=name' . $url, 'SSL');
+		
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		$url = '';
 
 		if (isset($this->request->get['sort'])) {
 			$url .= '&sort=' . $this->request->get['sort'];
 		}
+<<<<<<< HEAD
 
+=======
+												
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		if (isset($this->request->get['order'])) {
 			$url .= '&order=' . $this->request->get['order'];
 		}
@@ -239,6 +417,7 @@ class ControllerDesignLayout extends Controller {
 		$pagination = new Pagination();
 		$pagination->total = $layout_total;
 		$pagination->page = $page;
+<<<<<<< HEAD
 		$pagination->limit = $this->config->get('config_limit_admin');
 		$pagination->url = $this->url->link('design/layout', 'token=' . $this->session->data['token'] . $url . '&page={page}', true);
 
@@ -294,6 +473,52 @@ class ControllerDesignLayout extends Controller {
 			$data['error_name'] = '';
 		}
 
+=======
+		$pagination->limit = $this->config->get('config_admin_limit');
+		$pagination->text = $this->language->get('text_pagination');
+		$pagination->url = $this->url->link('design/layout', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
+
+		$this->data['pagination'] = $pagination->render();
+		
+		$this->data['sort'] = $sort;
+		$this->data['order'] = $order;
+
+		$this->template = 'design/layout_list.tpl';
+		$this->children = array(
+			'common/header',
+			'common/footer'
+		);
+				
+		$this->response->setOutput($this->render());
+	}
+
+	private function getForm() {
+		$this->data['heading_title'] = $this->language->get('heading_title');
+		
+		$this->data['text_default'] = $this->language->get('text_default');
+				
+		$this->data['entry_name'] = $this->language->get('entry_name');
+		$this->data['entry_store'] = $this->language->get('entry_store');
+		$this->data['entry_route'] = $this->language->get('entry_route');
+		
+		$this->data['button_save'] = $this->language->get('button_save');
+		$this->data['button_cancel'] = $this->language->get('button_cancel');
+		$this->data['button_add_route'] = $this->language->get('button_add_route');
+		$this->data['button_remove'] = $this->language->get('button_remove');
+
+ 		if (isset($this->error['warning'])) {
+			$this->data['error_warning'] = $this->error['warning'];
+		} else {
+			$this->data['error_warning'] = '';
+		}
+
+ 		if (isset($this->error['name'])) {
+			$this->data['error_name'] = $this->error['name'];
+		} else {
+			$this->data['error_name'] = '';
+		}
+				
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		$url = '';
 
 		if (isset($this->request->get['sort'])) {
@@ -303,11 +528,16 @@ class ControllerDesignLayout extends Controller {
 		if (isset($this->request->get['order'])) {
 			$url .= '&order=' . $this->request->get['order'];
 		}
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		if (isset($this->request->get['page'])) {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
+<<<<<<< HEAD
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
@@ -330,11 +560,36 @@ class ControllerDesignLayout extends Controller {
 
 		$data['token'] = $this->session->data['token'];
 
+=======
+  		$this->data['breadcrumbs'] = array();
+
+   		$this->data['breadcrumbs'][] = array(
+       		'text'      => $this->language->get('text_home'),
+			'href'      => $this->url->link('common/home', 'token=' . $this->session->data['token'], 'SSL'),
+      		'separator' => false
+   		);
+
+   		$this->data['breadcrumbs'][] = array(
+       		'text'      => $this->language->get('heading_title'),
+			'href'      => $this->url->link('design/layout', 'token=' . $this->session->data['token'] . $url, 'SSL'),
+      		'separator' => ' :: '
+   		);
+							
+		if (!isset($this->request->get['layout_id'])) { 
+			$this->data['action'] = $this->url->link('design/layout/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		} else {
+			$this->data['action'] = $this->url->link('design/layout/update', 'token=' . $this->session->data['token'] . '&layout_id=' . $this->request->get['layout_id'] . $url, 'SSL');
+		}
+		
+		$this->data['cancel'] = $this->url->link('design/layout', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		if (isset($this->request->get['layout_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
 			$layout_info = $this->model_design_layout->getLayout($this->request->get['layout_id']);
 		}
 
 		if (isset($this->request->post['name'])) {
+<<<<<<< HEAD
 			$data['name'] = $this->request->post['name'];
 		} elseif (!empty($layout_info)) {
 			$data['name'] = $layout_info['name'];
@@ -435,6 +690,37 @@ class ControllerDesignLayout extends Controller {
 	}
 
 	protected function validateForm() {
+=======
+			$this->data['name'] = $this->request->post['name'];
+		} elseif (!empty($layout_info)) {
+			$this->data['name'] = $layout_info['name'];
+		} else {
+			$this->data['name'] = '';
+		}
+		
+		$this->load->model('setting/store');
+		
+		$this->data['stores'] = $this->model_setting_store->getStores();
+		
+		if (isset($this->request->post['layout_route'])) {
+			$this->data['layout_routes'] = $this->request->post['layout_route'];
+		} elseif (isset($this->request->get['layout_id'])) {
+			$this->data['layout_routes'] = $this->model_design_layout->getLayoutRoutes($this->request->get['layout_id']);
+		} else {
+			$this->data['layout_routes'] = array();
+		}	
+				
+		$this->template = 'design/layout_form.tpl';
+		$this->children = array(
+			'common/header',
+			'common/footer'
+		);
+				
+		$this->response->setOutput($this->render());
+	}
+
+	private function validateForm() {
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		if (!$this->user->hasPermission('modify', 'design/layout')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
@@ -443,6 +729,7 @@ class ControllerDesignLayout extends Controller {
 			$this->error['name'] = $this->language->get('error_name');
 		}
 
+<<<<<<< HEAD
 		return !$this->error;
 	}
 
@@ -451,29 +738,58 @@ class ControllerDesignLayout extends Controller {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 
+=======
+		if (!$this->error) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	private function validateDelete() {
+		if (!$this->user->hasPermission('modify', 'design/layout')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+		}
+		
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		$this->load->model('setting/store');
 		$this->load->model('catalog/product');
 		$this->load->model('catalog/category');
 		$this->load->model('catalog/information');
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 		foreach ($this->request->post['selected'] as $layout_id) {
 			if ($this->config->get('config_layout_id') == $layout_id) {
 				$this->error['warning'] = $this->language->get('error_default');
 			}
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 			$store_total = $this->model_setting_store->getTotalStoresByLayoutId($layout_id);
 
 			if ($store_total) {
 				$this->error['warning'] = sprintf($this->language->get('error_store'), $store_total);
 			}
+<<<<<<< HEAD
 
 			$product_total = $this->model_catalog_product->getTotalProductsByLayoutId($layout_id);
 
+=======
+			
+			$product_total = $this->model_catalog_product->getTotalProductsByLayoutId($layout_id);
+	
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 			if ($product_total) {
 				$this->error['warning'] = sprintf($this->language->get('error_product'), $product_total);
 			}
 
 			$category_total = $this->model_catalog_category->getTotalCategoriesByLayoutId($layout_id);
+<<<<<<< HEAD
 
 			if ($category_total) {
 				$this->error['warning'] = sprintf($this->language->get('error_category'), $category_total);
@@ -481,11 +797,32 @@ class ControllerDesignLayout extends Controller {
 
 			$information_total = $this->model_catalog_information->getTotalInformationsByLayoutId($layout_id);
 
+=======
+	
+			if ($category_total) {
+				$this->error['warning'] = sprintf($this->language->get('error_category'), $category_total);
+			}
+							
+			$information_total = $this->model_catalog_information->getTotalInformationsByLayoutId($layout_id);
+		
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 			if ($information_total) {
 				$this->error['warning'] = sprintf($this->language->get('error_information'), $information_total);
 			}
 		}
+<<<<<<< HEAD
 
 		return !$this->error;
 	}
 }
+=======
+	
+		if (!$this->error) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+?>
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19

@@ -31,8 +31,12 @@
           <?php } ?></td>
         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;"><b><?php echo $text_email; ?></b> <?php echo $email; ?><br />
           <b><?php echo $text_telephone; ?></b> <?php echo $telephone; ?><br />
+<<<<<<< HEAD
           <b><?php echo $text_ip; ?></b> <?php echo $ip; ?><br />
           <b><?php echo $text_order_status; ?></b> <?php echo $order_status; ?><br /></td>
+=======
+          <b><?php echo $text_ip; ?></b> <?php echo $ip; ?><br /></td>
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
       </tr>
     </tbody>
   </table>
@@ -112,6 +116,10 @@
     </tfoot>
   </table>
   <p style="margin-top: 0px; margin-bottom: 20px;"><?php echo $text_footer; ?></p>
+<<<<<<< HEAD
+=======
+  <p style="margin-top: 0px; margin-bottom: 20px;"><?php echo $text_powered; ?></p>
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
 </div>
 </body>
 </html>

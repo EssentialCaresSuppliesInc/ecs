@@ -33,9 +33,13 @@ a img {
 </head>
 <body>
 <div id="container">
+<<<<<<< HEAD
   <?php if ($image) { ?>
   <div style="float: right; margin-left: 20px;"><a href="<?php echo $store_url; ?>" title="<?php echo $store_name; ?>"><img src="<?php echo $image; ?>" alt="<?php echo $store_name; ?>" /></a></div>
   <?php } ?>
+=======
+  <div style="float: right; margin-left: 20px;"><a href="<?php echo $store_url; ?>" title="<?php echo $store_name; ?>"><img src="<?php echo $image; ?>" alt="<?php echo $store_name; ?>" /></a></div>
+>>>>>>> 5569f784842ef4dcee370d4c545c2704a8d47f19
   <div>
     <p><?php echo $text_greeting; ?></p>
     <p><?php echo $text_from; ?></p>
