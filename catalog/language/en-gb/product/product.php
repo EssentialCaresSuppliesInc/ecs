@@ -1,4 +1,5 @@
 <?php
+$_['module_description']              = 'Consequat magna massa vel suspendisse morbi aliquam faucibus ligula ante ipsum ac nulla.';
 // Text
 $_['text_search']              = 'Search';
 $_['text_brand']               = 'Brand';

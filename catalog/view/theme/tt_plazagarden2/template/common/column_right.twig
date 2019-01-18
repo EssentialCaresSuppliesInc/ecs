@@ -1,0 +1,12 @@
+{% if modules or use_layered %}
+<aside id="column-right" class="col-md-3 col-sm-12">
+   <div class="col-order-inner">
+  {% if use_layered %}
+    {{ layered_section }}
+  {% endif %}
+  {% for module in modules %}
+  {{ module }}
+  {% endfor %}
+  </div>
+</aside>
+{% endif %}

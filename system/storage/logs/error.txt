@@ -1,0 +1,15 @@
+2019-01-18 0:58:07 - PHP Notice:  Use of undefined constant DIR_STORAGE - assumed 'DIR_STORAGE' in C:\xampp\htdocs\essentialcares3\admin\controller\startup\sass.php on line 7
+2019-01-18 0:58:07 - PHP Warning:  include_once(DIR_STORAGEvendor/scss.inc.php): failed to open stream: No such file or directory in C:\xampp\htdocs\essentialcares3\admin\controller\startup\sass.php on line 7
+2019-01-18 0:58:07 - PHP Warning:  include_once(): Failed opening 'DIR_STORAGEvendor/scss.inc.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\essentialcares3\admin\controller\startup\sass.php on line 7
+2019-01-18 16:46:50 - PHP Notice:  Use of undefined constant DIR_STORAGE - assumed 'DIR_STORAGE' in C:\xampp\htdocs\essentialcares3\admin\controller\startup\sass.php on line 7
+2019-01-18 16:46:50 - PHP Warning:  include_once(DIR_STORAGEvendor/scss.inc.php): failed to open stream: No such file or directory in C:\xampp\htdocs\essentialcares3\admin\controller\startup\sass.php on line 7
+2019-01-18 16:46:50 - PHP Warning:  include_once(): Failed opening 'DIR_STORAGEvendor/scss.inc.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\essentialcares3\admin\controller\startup\sass.php on line 7
+2019-01-18 16:47:00 - PHP Notice:  Use of undefined constant DIR_STORAGE - assumed 'DIR_STORAGE' in C:\xampp\htdocs\essentialcares3\admin\controller\startup\sass.php on line 7
+2019-01-18 16:47:00 - PHP Warning:  include_once(DIR_STORAGEvendor/scss.inc.php): failed to open stream: No such file or directory in C:\xampp\htdocs\essentialcares3\admin\controller\startup\sass.php on line 7
+2019-01-18 16:47:00 - PHP Warning:  include_once(): Failed opening 'DIR_STORAGEvendor/scss.inc.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\essentialcares3\admin\controller\startup\sass.php on line 7
+2019-01-18 16:47:51 - PHP Notice:  Use of undefined constant DIR_STORAGE - assumed 'DIR_STORAGE' in C:\xampp\htdocs\essentialcares3\admin\controller\startup\sass.php on line 7
+2019-01-18 16:47:51 - PHP Warning:  include_once(DIR_STORAGEvendor/scss.inc.php): failed to open stream: No such file or directory in C:\xampp\htdocs\essentialcares3\admin\controller\startup\sass.php on line 7
+2019-01-18 16:47:51 - PHP Warning:  include_once(): Failed opening 'DIR_STORAGEvendor/scss.inc.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\essentialcares3\admin\controller\startup\sass.php on line 7
+2019-01-18 16:48:12 - PHP Notice:  Use of undefined constant DIR_STORAGE - assumed 'DIR_STORAGE' in C:\xampp\htdocs\essentialcares3\admin\controller\startup\sass.php on line 7
+2019-01-18 16:48:12 - PHP Warning:  include_once(DIR_STORAGEvendor/scss.inc.php): failed to open stream: No such file or directory in C:\xampp\htdocs\essentialcares3\admin\controller\startup\sass.php on line 7
+2019-01-18 16:48:12 - PHP Warning:  include_once(): Failed opening 'DIR_STORAGEvendor/scss.inc.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\essentialcares3\admin\controller\startup\sass.php on line 7

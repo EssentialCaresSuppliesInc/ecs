@@ -15,6 +15,17 @@ $_['text_content_top']    = 'Content Top';
 $_['text_content_bottom'] = 'Content Bottom';
 $_['text_column_left']    = 'Column Left';
 $_['text_column_right']   = 'Column Right';
+$_['text_block1']   = 'Block 1';
+$_['text_block2']   = 'Block 2';
+$_['text_block3']   = 'Block 3';
+$_['text_block4']   = 'Block 4';
+$_['text_block5']   = 'Block 5';
+$_['text_block6']   = 'Block 6';
+$_['text_block7']   = 'Block 7';
+$_['text_block8']   = 'Block 8';
+$_['text_block9']   = 'Block 9';
+$_['text_block10']   = 'Block 10';
+$_['text_block11']   = 'Block 11';
 
 // Column
 $_['column_name']         = 'Layout Name';
@@ -22,6 +33,7 @@ $_['column_action']       = 'Action';
 
 // Entry
 $_['entry_name']          = 'Layout Name';
+$_['entry_layout_name']          = 'Layout Name';
 $_['entry_store']         = 'Store';
 $_['entry_route']         = 'Route';
 $_['entry_module']        = 'Module';
